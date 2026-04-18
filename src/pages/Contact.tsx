@@ -1,24 +1,43 @@
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { Send, Mail, MessageSquare } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 import OrganicGraphics from '../components/OrganicGraphics';
 import FloatingParticles from '../components/FloatingParticles';
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message'),
+    };
+
+    try {
+      const { error } = await supabase
+        .from('leads')
+        .insert([data]);
+
+      if (error) throw error;
+
       toast.success('Mensagem enviada!', {
         description: 'Retornaremos em menos de 24 horas.',
       });
-      (e.target as HTMLFormElement).reset();
-    }, 1500);
+      e.currentTarget.reset();
+    } catch (error: any) {
+      console.error('Error submitting form:', error);
+      toast.error('Erro ao enviar mensagem', {
+        description: 'Por favor, tente novamente mais tarde ou contate-nos por e-mail.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -71,6 +90,7 @@ export default function Contact() {
                 <label className="text-sm font-semibold text-[#1A1A2E] ml-1">Nome Completo</label>
                 <input 
                   required
+                  name="name"
                   type="text" 
                   placeholder="Seu nome"
                   className="w-full px-6 py-4 rounded-2xl bg-[#F9F9FB] border-2 border-transparent focus:border-[#611CFC]/20 focus:bg-white outline-none transition-all"
@@ -80,6 +100,7 @@ export default function Contact() {
                 <label className="text-sm font-semibold text-[#1A1A2E] ml-1">E-mail corporativo</label>
                 <input 
                   required
+                  name="email"
                   type="email" 
                   placeholder="voce@empresa.com"
                   className="w-full px-6 py-4 rounded-2xl bg-[#F9F9FB] border-2 border-transparent focus:border-[#611CFC]/20 focus:bg-white outline-none transition-all"
@@ -89,6 +110,7 @@ export default function Contact() {
                 <label className="text-sm font-semibold text-[#1A1A2E] ml-1">Como podemos ajudar?</label>
                 <textarea 
                   required
+                  name="message"
                   rows={4}
                   placeholder="Conte-nos um pouco sobre seu desafio..."
                   className="w-full px-6 py-4 rounded-2xl bg-[#F9F9FB] border-2 border-transparent focus:border-[#611CFC]/20 focus:bg-white outline-none transition-all resize-none"
