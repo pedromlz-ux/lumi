@@ -83,8 +83,9 @@ export default function MagicBlock() {
             </span>
 
             <h2 className="magic-item text-3xl sm:text-4xl lg:text-[48px] font-extrabold leading-[1.1] tracking-[-2px] mb-8" style={{ color: '#1A1A2E' }}>
-              PARECE MÁGICA. MAS É SÓ A{' '}
-              <BrandLumi text="lumi" useHeroStyles />{' ' }
+              PARECE MÁGICA.<br /> 
+              MAS É SÓ A{' '}
+              <BrandLumi text="lumi" useHeroStyles />{' '}
               FUNCIONANDO.
             </h2>
 
