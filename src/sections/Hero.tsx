@@ -132,7 +132,7 @@ export default function Hero() {
             style={{ color: '#6B6B78' }}
           >
             Automa&ccedil;&atilde;o inteligente que <span className="text-[#1A1A2E] font-bold">atende seus clientes</span>, 
-            organiza seus processos e <span className="text-[#1A1A2E] font-bold">vende</span> enquanto voc&ecirc; foca no que realmente importa.
+            organiza seus processos e <span className="text-[#1A1A2E] font-bold">vende</span> enquanto voc&ecirc; foca no que realmente&nbsp;importa.
           </p>
 
           {/* CTA with enhanced glow */}

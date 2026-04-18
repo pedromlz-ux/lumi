@@ -55,11 +55,11 @@ export default function Integrations() {
           </span>
 
           <h2 className="text-3xl sm:text-4xl lg:text-[48px] font-extrabold tracking-[-2px] mb-5" style={{ color: '#1A1A2E' }}>
-            CONECTA COM TUDO.<br className="hidden sm:block" /> FUNCIONA SEM COMPLICAR.
+            CONECTA COM TUDO.<br className="hidden sm:block" /> FUNCIONA SEM&nbsp;COMPLICAR.
           </h2>
 
           <p className="text-base max-w-lg mx-auto mb-12" style={{ color: '#6B6B78' }}>
-            WhatsApp, CRM, ferramentas, processos. A <BrandLumi text="LUMI" className="text-lg" /> entra, organiza e faz acontecer.
+            WhatsApp, CRM, ferramentas, processos. A <BrandLumi text="LUMI" className="text-lg" /> entra, organiza e faz&nbsp;acontecer.
           </p>
         </div>
 

@@ -127,7 +127,7 @@ export default function ProofPoints() {
             className="mt-4 text-3xl sm:text-4xl lg:text-[48px] font-bold tracking-[-1px]"
             style={{ color: '#1A1A2E' }}
           >
-            Results that speak for themselves
+            Resultados que falam por&nbsp;si
           </h2>
         </div>
 
@@ -215,12 +215,10 @@ export default function ProofPoints() {
                 className="text-2xl font-bold tracking-[-0.5px]"
                 style={{ color: '#1A1A2E' }}
               >
-                Connects with everything you use
+                Conecta com tudo o que você&nbsp;usa
               </h3>
               <p className="mt-3 text-base" style={{ color: '#6B6B78' }}>
-                <BrandLumi text="LUMI" className="text-inherit" /> integrates seamlessly with 200+ tools your team already
-                loves. No migration headaches, no setup friction—just pure
-                automation from day one.
+                A <BrandLumi text="LUMI" className="text-inherit" /> se integra perfeitamente com as mais de 200 ferramentas que sua equipe já&nbsp;ama.
               </p>
               <a
                 href="#"

@@ -63,9 +63,9 @@ export default function ImpactBlock() {
             O que muda
           </span>
           <h2 className="impact-title text-2xl sm:text-3xl lg:text-[36px] font-extrabold leading-[1.12] tracking-tight" style={{ color: '#FFFFFF' }}>
-            &Eacute; a sensa&ccedil;&atilde;o de{' '}
+            &Eacute; a sensa&ccedil;&atilde;o de<br className="hidden sm:block" />{' '}
             <span className="text-white">
-              &ldquo;por que eu n&atilde;o fiz isso antes?&rdquo;
+              &ldquo;por que eu n&atilde;o fiz isso&nbsp;antes?&rdquo;
             </span>
           </h2>
         </div>
