@@ -64,21 +64,20 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full overflow-hidden pt-28 pb-12 lg:pb-16" style={{ backgroundColor: '#F9F9FB' }}>
+    <section ref={sectionRef} className="relative w-full overflow-hidden pt-32 sm:pt-40 pb-12 lg:pb-16" style={{ backgroundColor: '#F9F9FB' }}>
       {/* Floating particles */}
-      <FloatingParticles count={30} colors={['#611CFC', '#4ECDC4', '#A78BFA', '#C4B5FD']} className="opacity-60" />
+      <FloatingParticles count={20} colors={['#611CFC', '#4ECDC4', '#A78BFA', '#C4B5FD']} className="opacity-60" />
 
       {/* Animated gradient blobs with mouse parallax */}
-      <div className="hero-blob absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full opacity-20 blur-3xl pointer-events-none transition-transform duration-300 ease-out animate-blob" style={{ background: 'radial-gradient(circle, #611CFC 0%, transparent 70%)' }} />
-      <div className="hero-blob absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] rounded-full opacity-15 blur-3xl pointer-events-none transition-transform duration-300 ease-out animate-blob" style={{ background: 'radial-gradient(circle, #4ECDC4 0%, transparent 70%)', animationDelay: '-5s' }} />
-      <div className="hero-blob absolute top-[40%] left-[30%] w-[300px] h-[300px] rounded-full opacity-10 blur-3xl pointer-events-none transition-transform duration-300 ease-out animate-blob" style={{ background: 'radial-gradient(circle, #8B5CF6 0%, transparent 70%)', animationDelay: '-3s' }} />
+      <div className="hero-blob absolute top-[-10%] right-[-5%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] rounded-full opacity-20 blur-3xl pointer-events-none transition-transform duration-300 ease-out animate-blob" style={{ background: 'radial-gradient(circle, #611CFC 0%, transparent 70%)' }} />
+      <div className="hero-blob absolute bottom-[-10%] left-[-10%] w-[300px] md:w-[400px] h-[300px] md:h-[400px] rounded-full opacity-15 blur-3xl pointer-events-none transition-transform duration-300 ease-out animate-blob" style={{ background: 'radial-gradient(circle, #4ECDC4 0%, transparent 70%)', animationDelay: '-5s' }} />
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 lg:px-8">
         <div className="flex flex-col items-center text-center">
           {/* Tag */}
           <span
             ref={tagRef}
-            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[1.5px] px-5 py-2.5 rounded-full mb-7 border border-[#611CFC]/10"
+            className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-[1.5px] px-4 sm:px-5 py-2 sm:py-2.5 rounded-full mb-6 sm:mb-7 border border-[#611CFC]/10"
             style={{ color: '#611CFC', backgroundColor: 'rgba(97, 28, 252, 0.06)' }}
           >
             <span className="w-2 h-2 rounded-full bg-[#4ECDC4] animate-scale-pulse" />
@@ -88,21 +87,21 @@ export default function Hero() {
           {/* Headline */}
           <h1
             ref={h1Ref}
-            className="text-4xl sm:text-5xl lg:text-[76px] font-extrabold leading-[1.02] tracking-[-3px] max-w-5xl"
+            className="text-3xl sm:text-5xl lg:text-[76px] font-extrabold leading-[1.1] sm:leading-[1.02] tracking-tight sm:tracking-[-3px] max-w-5xl px-2"
             style={{ color: '#1A1A2E' }}
           >
             A{' '}
             <BrandLumi sparkles useHeroStyles />{' '}
             te ajuda com
-            <div className="relative h-[1.15em] overflow-hidden mt-3 mb-2 flex justify-center">
+            <div className="relative h-[1.15em] overflow-hidden mt-2 sm:mt-3 mb-1 sm:mb-2 flex justify-center">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={titleNumber}
                   className="absolute font-black italic"
                   style={{ color: '#611CFC' }}
-                  initial={{ opacity: 0, y: 50, rotateX: -90 }}
+                  initial={{ opacity: 0, y: 30, rotateX: -90 }}
                   animate={{ opacity: 1, y: 0, rotateX: 0 }}
-                  exit={{ opacity: 0, y: -50, rotateX: 90 }}
+                  exit={{ opacity: 0, y: -30, rotateX: 90 }}
                   transition={{ type: "spring", stiffness: 70, damping: 20 }}
                 >
                   {titles[titleNumber]}
@@ -114,12 +113,12 @@ export default function Hero() {
           {/* Premium Pillar Badges */}
           <div
             ref={p1Ref}
-            className="mt-14 flex flex-wrap justify-center gap-4"
+            className="mt-8 sm:mt-14 flex flex-wrap justify-center gap-2 sm:gap-4 px-4"
           >
             {['Sem esforço.', 'Sem espera.', 'Sem bagunça.'].map((text, i) => (
               <span 
                 key={i}
-                className="px-6 py-2.5 rounded-2xl text-sm font-bold tracking-tight glass border border-[#611CFC]/10 shadow-sm"
+                className="px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl text-[10px] sm:text-sm font-bold tracking-tight glass border border-[#611CFC]/10 shadow-sm"
                 style={{ color: '#611CFC' }}
               >
                 {text}
@@ -129,7 +128,7 @@ export default function Hero() {
 
           <p
             ref={p2Ref}
-            className="mt-8 text-lg sm:text-xl max-w-2xl leading-relaxed font-medium"
+            className="mt-6 sm:mt-8 text-sm sm:text-xl max-w-2xl leading-relaxed font-medium px-4"
             style={{ color: '#6B6B78' }}
           >
             Automa&ccedil;&atilde;o inteligente que <span className="text-[#1A1A2E] font-bold">atende seus clientes</span>, 
@@ -140,7 +139,7 @@ export default function Hero() {
           <a
             ref={ctaRef}
             href="#cta"
-            className="mt-10 inline-flex items-center gap-3 text-lg font-bold px-10 py-5 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_rgba(97,28,252,0.35)] group"
+            className="mt-8 sm:mt-10 inline-flex items-center gap-2 sm:gap-3 text-sm sm:text-lg font-bold px-8 sm:px-10 py-4 sm:py-5 rounded-xl sm:rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_rgba(97,28,252,0.35)] group"
             style={{
               background: 'linear-gradient(135deg, #611CFC 0%, #7C3AED 50%, #611CFC 100%)',
               backgroundSize: '200% 200%',
@@ -151,7 +150,7 @@ export default function Hero() {
           >
             Ativar minha automa&ccedil;&atilde;o
             <svg
-              width="20" height="20" viewBox="0 0 20 20" fill="none"
+              width="18" height="18" viewBox="0 0 20 20" fill="none"
               className="transition-transform duration-300 group-hover:translate-x-1"
             >
               <path d="M5 10H15M15 10L11 6M15 10L11 14" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />

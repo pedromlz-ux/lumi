@@ -290,8 +290,8 @@ export default function FeatureShowcase() {
   return (
     <section
       ref={sectionRef}
-      id="features"
-      className="relative w-full py-16 lg:py-20"
+      id="como-funciona"
+      className="relative w-full py-12 md:py-16 lg:py-20"
       style={{ backgroundColor: '#F9F9FB' }}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">

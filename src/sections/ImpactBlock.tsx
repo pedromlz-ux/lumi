@@ -42,7 +42,7 @@ export default function ImpactBlock() {
   return (
     <section 
       ref={sectionRef} 
-      className="relative w-full py-16 lg:py-20 overflow-hidden bg-[#611CFC]"
+      className="relative w-full py-12 lg:py-20 overflow-hidden bg-[#611CFC]"
       style={{
         backgroundImage: 'url("/magic-bg.png")',
         backgroundSize: 'cover',

@@ -111,7 +111,7 @@ export default function ProofPoints() {
     <section
       ref={sectionRef}
       id="solutions"
-      className="relative w-full py-16 lg:py-20"
+      className="relative w-full overflow-hidden pt-12 pb-16 lg:pt-16 lg:pb-16"
       style={{ backgroundColor: '#F9F9FB' }}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
