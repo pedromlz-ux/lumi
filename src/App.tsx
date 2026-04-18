@@ -8,6 +8,7 @@ import Terms from '@/pages/Terms';
 import Privacy from '@/pages/Privacy';
 import Contact from '@/pages/Contact';
 import Blog from '@/pages/Blog';
+import Activate from '@/pages/Activate';
 import ScrollToTop from '@/components/ScrollToTop';
 import { Toaster } from 'sonner';
 
@@ -41,6 +42,7 @@ export default function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/ativar" element={<Activate />} />
         </Routes>
         <Footer />
         <Toaster position="top-center" richColors />

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import FloatingParticles from '../components/FloatingParticles';
@@ -59,9 +60,8 @@ export default function CTAFinal() {
             E talvez isso seja exatamente o que está faltando.
           </p>
 
-          <a
-            ref={btnRef}
-            href="#"
+          <Link
+            to="/ativar"
             className="cta-item inline-flex items-center gap-3 text-lg font-bold px-12 py-6 rounded-2xl transition-all duration-300 hover:scale-105 group"
             style={{
               backgroundColor: '#1A1A2E',
@@ -69,14 +69,14 @@ export default function CTAFinal() {
               boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
             }}
           >
-            Quero automatizar agora
+            Ativar agora
             <svg
               width="22" height="22" viewBox="0 0 22 22" fill="none"
               className="transition-transform duration-300 group-hover:translate-x-1"
             >
               <path d="M4 11H18M18 11L13 6M18 11L13 16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

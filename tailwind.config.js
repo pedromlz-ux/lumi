@@ -94,6 +94,9 @@ module.exports = {
         "pulse-slow": "pulse-slow 4s ease-in-out infinite",
         "scale-pulse": "scale-pulse 4s ease-in-out infinite",
       },
+      fontFamily: {
+        handwritten: ["Caveat", "cursive"],
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

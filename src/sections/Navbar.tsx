@@ -196,7 +196,7 @@ export default function Navbar() {
         </div>
 
         <Link
-          to={isHome ? "#cta" : "/#cta"}
+          to="/ativar"
           className="relative text-[10px] md:text-sm font-semibold px-4 md:px-6 py-2 md:py-2.5 rounded-full transition-all duration-300 hover:scale-105 overflow-hidden group ml-2 md:ml-6 shrink-0"
           style={{
             background: 'linear-gradient(135deg, #611CFC 0%, #7C3AED 100%)',
