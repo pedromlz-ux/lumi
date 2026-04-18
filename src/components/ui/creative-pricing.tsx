@@ -17,12 +17,10 @@ interface PricingTier {
 function CreativePricing({
     tag = "Jornadas Lumi",
     title = "Escolha o sistema certo para cada jornada",
-    description = "Os módulos devem ser apresentados por uso, não por tecnicismo",
     tiers,
 }: {
-    tag?: string;
+    tag?: React.ReactNode;
     title?: string;
-    description?: string;
     tiers: PricingTier[];
 }) {
     return (

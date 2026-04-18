@@ -1,5 +1,6 @@
 import { Workflow, Headset, Target, Settings, Activity, Heart } from 'lucide-react';
 import { CreativePricing, type PricingTier } from '@/components/ui/creative-pricing';
+import { BrandLumi } from '@/components/BrandLumi';
 
 const journeys: PricingTier[] = [
   {
@@ -62,7 +63,10 @@ const journeys: PricingTier[] = [
 export default function Activate() {
   return (
     <div className="relative min-h-screen bg-[#4ECDC4] overflow-hidden">
-      <CreativePricing tiers={journeys} />
+      <CreativePricing 
+        tag={<div className="flex items-center gap-2">Jornadas <BrandLumi /></div>}
+        tiers={journeys} 
+      />
     </div>
   );
 }
