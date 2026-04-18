@@ -65,7 +65,7 @@ export default function Capabilities() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="capacidades" className="relative w-full py-24 lg:py-32 overflow-hidden" style={{ backgroundColor: '#F9F9FB' }}>
+    <section ref={sectionRef} id="capacidades" className="relative w-full py-16 lg:py-20 overflow-hidden" style={{ backgroundColor: '#F9F9FB' }}>
       <FloatingParticles count={12} colors={['#611CFC', '#4ECDC4']} className="opacity-30" />
 
       {/* Decorative gradient */}

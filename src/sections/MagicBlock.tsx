@@ -51,7 +51,7 @@ export default function MagicBlock() {
   ];
 
   return (
-    <section ref={sectionRef} id="como-funciona" className="relative w-full py-24 lg:py-32 overflow-hidden" style={{ backgroundColor: '#F9F9FB' }}>
+    <section ref={sectionRef} id="como-funciona" className="relative w-full py-16 lg:py-20 overflow-hidden" style={{ backgroundColor: '#F9F9FB' }}>
       <FloatingParticles count={15} colors={['#611CFC', '#A78BFA', '#4ECDC4']} className="opacity-25" />
 
       {/* Large decorative gradient */}

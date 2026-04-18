@@ -64,7 +64,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full overflow-hidden pt-28 pb-16 lg:pb-24" style={{ backgroundColor: '#F9F9FB' }}>
+    <section ref={sectionRef} className="relative w-full overflow-hidden pt-28 pb-12 lg:pb-16" style={{ backgroundColor: '#F9F9FB' }}>
       {/* Floating particles */}
       <FloatingParticles count={30} colors={['#611CFC', '#4ECDC4', '#A78BFA', '#C4B5FD']} className="opacity-60" />
 

@@ -34,9 +34,9 @@ export default function CTAFinal() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="cta" className="relative w-full py-20 lg:py-28 overflow-hidden bg-[#F9F9FB]">
+    <section ref={sectionRef} id="cta" className="relative w-full py-12 lg:py-16 overflow-hidden bg-[#F9F9FB]">
       <div 
-        className="relative z-10 mx-auto max-w-6xl px-6 lg:px-8 py-20 lg:py-28 overflow-hidden rounded-[40px] shadow-[0_32px_80px_rgba(78,205,196,0.2)]"
+        className="relative z-10 mx-auto max-w-6xl px-6 lg:px-8 py-12 lg:py-16 overflow-hidden rounded-[40px] shadow-[0_32px_80px_rgba(78,205,196,0.2)]"
         style={{
           backgroundImage: 'url("/cta-floating-bg.png")',
           backgroundSize: 'cover',
