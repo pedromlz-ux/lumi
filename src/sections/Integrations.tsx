@@ -39,7 +39,7 @@ export default function Integrations() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="integrações" className="relative w-full py-16 lg:py-20 bg-[#F9F9FB] overflow-hidden">
+    <section ref={sectionRef} id="integrações" className="relative w-full py-12 lg:py-14 bg-[#F9F9FB] overflow-hidden">
       <FloatingParticles count={15} colors={['#611CFC', '#4ECDC4']} className="opacity-40" />
 
       {/* Giant decorative text */}

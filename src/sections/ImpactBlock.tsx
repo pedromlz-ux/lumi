@@ -42,27 +42,27 @@ export default function ImpactBlock() {
   return (
     <section 
       ref={sectionRef} 
-      className="relative w-full py-12 lg:py-20 overflow-hidden bg-[#611CFC]"
+      className="relative w-full py-10 lg:py-14 overflow-hidden bg-[#611CFC]"
       style={{
         backgroundImage: 'url("/magic-bg.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
-      {/* Subtle overlay to maintain text readability if needed */}
+      {/* Subtle overlay */}
       <div className="absolute inset-0 bg-[#611CFC]/40" />
 
       {/* Floating gradient orbs */}
-      <div className="absolute top-[-100px] right-[-100px] w-[400px] h-[400px] rounded-full opacity-20 blur-3xl pointer-events-none animate-blob" style={{ background: 'radial-gradient(circle, #FFFFFF 0%, transparent 70%)' }} />
-      <div className="absolute bottom-[-100px] left-[-100px] w-[300px] h-[300px] rounded-full opacity-15 blur-3xl pointer-events-none animate-blob" style={{ background: 'radial-gradient(circle, #4ECDC4 0%, transparent 70%)', animationDelay: '-5s' }} />
+      <div className="absolute top-[-80px] right-[-80px] w-[300px] h-[300px] rounded-full opacity-20 blur-3xl pointer-events-none animate-blob" style={{ background: 'radial-gradient(circle, #FFFFFF 0%, transparent 70%)' }} />
+      <div className="absolute bottom-[-100px] left-[-60px] w-[250px] h-[250px] rounded-full opacity-15 blur-3xl pointer-events-none animate-blob" style={{ background: 'radial-gradient(circle, #4ECDC4 0%, transparent 70%)', animationDelay: '-5s' }} />
 
-      <div className="relative z-10 mx-auto max-w-4xl px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="impact-title inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[2px] mb-5 px-4 py-2 rounded-full" style={{ color: '#FFFFFF', backgroundColor: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(255, 255, 255, 0.2)' }}>
+      <div className="relative z-10 mx-auto max-w-3xl px-6 lg:px-8">
+        <div className="text-center mb-10">
+          <span className="impact-title inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[1.5px] mb-4 px-3 py-1.5 rounded-full" style={{ color: '#FFFFFF', backgroundColor: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(255, 255, 255, 0.2)' }}>
             <span className="w-1.5 h-1.5 rounded-full bg-[#4ECDC4] animate-scale-pulse" />
             O que muda
           </span>
-          <h2 className="impact-title text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.12] tracking-[-1.5px]" style={{ color: '#FFFFFF' }}>
+          <h2 className="impact-title text-2xl sm:text-3xl lg:text-[36px] font-extrabold leading-[1.12] tracking-tight" style={{ color: '#FFFFFF' }}>
             &Eacute; a sensa&ccedil;&atilde;o de{' '}
             <span className="text-white">
               &ldquo;por que eu n&atilde;o fiz isso antes?&rdquo;
@@ -70,38 +70,37 @@ export default function ImpactBlock() {
           </h2>
         </div>
 
-        <div className="impact-cards space-y-5">
+        <div className="impact-cards space-y-4">
           {painPoints.map((p, i) => (
             <div
               key={i}
-              className="impact-card group relative flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-8 p-7 rounded-2xl transition-all duration-500 hover:scale-[1.02] cursor-default overflow-hidden"
+              className="impact-card group relative flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 p-5 rounded-xl transition-all duration-500 hover:scale-[1.01] cursor-default overflow-hidden"
               style={{
                 backgroundColor: 'rgba(255,255,255,0.08)',
                 border: '1px solid rgba(255,255,255,0.15)',
               }}
             >
-              {/* Hover glow */}
               <div
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 style={{ background: 'linear-gradient(90deg, rgba(255,255,255,0.1) 0%, transparent 60%)' }}
               />
 
-              <p className="relative text-base sm:text-lg font-medium flex-1" style={{ color: 'rgba(255,255,255,0.7)' }}>
+              <p className="relative text-sm sm:text-base font-medium flex-1 text-white/70">
                 {p.before}
               </p>
 
-              <div className="relative hidden sm:flex items-center gap-4">
-                <span className="text-2xl transition-transform duration-300 group-hover:translate-x-2" style={{ color: 'rgba(255,255,255,0.3)' }}>&rarr;</span>
+              <div className="relative hidden sm:flex items-center gap-3">
+                <span className="text-xl transition-transform duration-300 group-hover:translate-x-1 opacity-30 text-white">&rarr;</span>
               </div>
 
-              <p className="relative text-lg font-bold whitespace-nowrap transition-all duration-300 group-hover:scale-105" style={{ color: '#FFFFFF' }}>
+              <p className="relative text-base font-bold whitespace-nowrap transition-all duration-300 group-hover:scale-105" style={{ color: '#FFFFFF' }}>
                 {p.after}
               </p>
             </div>
           ))}
         </div>
 
-        <p className="impact-final text-center mt-14 text-2xl font-bold" style={{ color: '#FFFFFF' }}>
+        <p className="impact-final text-center mt-10 text-xl font-bold" style={{ color: '#FFFFFF' }}>
           Agora flui.
         </p>
       </div>

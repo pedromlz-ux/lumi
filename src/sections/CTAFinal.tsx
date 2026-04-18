@@ -34,7 +34,7 @@ export default function CTAFinal() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="cta" className="relative w-full py-16 lg:py-20 bg-[#F9F9FB] overflow-hidden">
+    <section ref={sectionRef} id="cta" className="relative w-full py-12 lg:py-14 bg-[#F9F9FB] overflow-hidden">
       <div 
         className="relative z-10 mx-auto max-w-6xl px-6 lg:px-8 py-12 lg:py-16 overflow-hidden rounded-[40px] shadow-[0_32px_80px_rgba(78,205,196,0.2)]"
         style={{
