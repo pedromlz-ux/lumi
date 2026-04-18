@@ -50,7 +50,9 @@ export default function CTAFinal() {
 
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <h2 className="cta-item text-3xl sm:text-4xl lg:text-[52px] font-extrabold leading-[1.08] tracking-[-2px] mb-7" style={{ color: '#1A1A2E' }}>
-            SEU NEGÓCIO PODE FUNCIONAR SEM VOCÊ 100% DO TEMPO
+            SEU NEGÓCIO PODE<br />
+            FUNCIONAR SEM VOCÊ<br />
+            100% DO TEMPO
           </h2>
 
           <p className="cta-item text-lg mb-12 max-w-xl mx-auto" style={{ color: 'rgba(26,26,46,0.7)' }}>
