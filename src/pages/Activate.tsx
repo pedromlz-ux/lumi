@@ -61,7 +61,7 @@ const journeys: PricingTier[] = [
 
 export default function Activate() {
   return (
-    <div className="relative min-h-screen bg-[#0A0A0B] overflow-hidden">
+    <div className="relative min-h-screen bg-[#4ECDC4] overflow-hidden">
       <CreativePricing tiers={journeys} />
     </div>
   );

@@ -3,6 +3,7 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 type SubMenuItem = {
   label: string;
@@ -25,15 +26,19 @@ type NavItem = {
 
 type DropdownNavigationProps = {
   navItems: NavItem[];
+  isDark?: boolean;
 };
 
-export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
+export function DropdownNavigation({ navItems, isDark }: DropdownNavigationProps) {
   const [openMenu, setOpenMenu] = React.useState<string | null>(null);
   const [isHover, setIsHover] = useState<number | null>(null);
 
   const handleHover = (menuLabel: string | null) => {
     setOpenMenu(menuLabel);
   };
+
+  const textClass = isDark ? "text-white/70 hover:text-white" : "text-[#6B6B78] hover:text-[#611CFC]";
+  const hoverBgClass = isDark ? "bg-white/10" : "bg-[#611CFC]/5";
 
   return (
     <div className="relative flex items-center justify-center">
@@ -47,7 +52,10 @@ export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
           >
             {navItem.subMenus ? (
               <button
-                className="text-sm font-medium py-1.5 px-4 flex cursor-pointer group transition-colors duration-300 items-center justify-center gap-1.5 text-[#6B6B78] hover:text-[#611CFC] relative"
+                className={cn(
+                  "text-sm font-medium py-1.5 px-4 flex cursor-pointer group transition-colors duration-300 items-center justify-center gap-1.5 relative z-10",
+                  textClass
+                )}
                 onMouseEnter={() => setIsHover(navItem.id)}
                 onMouseLeave={() => setIsHover(null)}
               >
@@ -59,7 +67,7 @@ export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
                 {(isHover === navItem.id || openMenu === navItem.label) && (
                   <motion.div
                     layoutId="hover-bg"
-                    className="absolute inset-0 bg-[#611CFC]/5"
+                    className={cn("absolute inset-0", hoverBgClass)}
                     style={{ borderRadius: 99 }}
                   />
                 )}
@@ -67,7 +75,10 @@ export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
             ) : (
               <a
                 href={navItem.link}
-                className="text-sm font-medium py-1.5 px-4 flex cursor-pointer group transition-colors duration-300 items-center justify-center gap-1 text-[#6B6B78] hover:text-[#611CFC] relative"
+                className={cn(
+                  "text-sm font-medium py-1.5 px-4 flex cursor-pointer group transition-colors duration-300 items-center justify-center gap-1 relative z-10",
+                  textClass
+                )}
                 onMouseEnter={() => setIsHover(navItem.id)}
                 onMouseLeave={() => setIsHover(null)}
               >
@@ -75,7 +86,7 @@ export function DropdownNavigation({ navItems }: DropdownNavigationProps) {
                 {(isHover === navItem.id) && (
                   <motion.div
                     layoutId="hover-bg"
-                    className="absolute inset-0 bg-[#611CFC]/5"
+                    className={cn("absolute inset-0", hoverBgClass)}
                     style={{ borderRadius: 99 }}
                   />
                 )}

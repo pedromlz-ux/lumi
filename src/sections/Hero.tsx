@@ -74,16 +74,6 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 lg:px-8">
         <div className="flex flex-col items-center text-center">
-          {/* Tag */}
-          <span
-            ref={tagRef}
-            className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-[1.5px] px-4 sm:px-5 py-2 sm:py-2.5 rounded-full mb-6 sm:mb-7 border border-[#611CFC]/10"
-            style={{ color: '#611CFC', backgroundColor: 'rgba(97, 28, 252, 0.06)' }}
-          >
-            <span className="w-2 h-2 rounded-full bg-[#4ECDC4] animate-scale-pulse" />
-            IA que resolve
-          </span>
-
           {/* Headline */}
           <h1
             ref={h1Ref}
