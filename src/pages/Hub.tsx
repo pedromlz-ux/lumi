@@ -14,6 +14,8 @@ import {
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router';
 import { BrandLumi } from '@/components/BrandLumi';
+import { cn } from '@/lib/utils';
+import TiltCard from '@/components/TiltCard';
 
 const CATEGORIES = ['Todos', 'Vendas', 'Atendimento', 'Backoffice', 'Analytics'];
 
@@ -77,7 +79,7 @@ export default function Hub() {
   }, [filter]);
 
   return (
-    <div className="min-h-screen pt-32 pb-20 tech-grid">
+    <div className="min-h-screen pt-32 pb-20 tech-grid font-inter">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16">
@@ -90,7 +92,7 @@ export default function Hub() {
           <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-[#1A1A2E] mb-6">
             LUMI <span className="opacity-20 text-stroke">HUB</span>
           </h1>
-          <p className="text-lg text-slate-500 max-w-2xl font-medium leading-relaxed">
+          <p className="text-lg text-slate-500 max-w-2xl font-bold leading-relaxed">
             Selecione o módulo ideal para a sua operação. Todos os sistemas integrados nativamente 
             pela <BrandLumi /> para uma experiência de gestão científica e sem atritos.
           </p>
@@ -102,10 +104,10 @@ export default function Hub() {
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-6 py-2 rounded-md text-xs font-bold uppercase tracking-widest transition-all duration-200 border ${
+              className={`px-6 py-2 rounded-md text-xs font-black uppercase tracking-widest transition-all duration-200 border ${
                 filter === cat 
                   ? 'bg-[#1A1A2E] text-white border-[#1A1A2E]' 
-                  : 'bg-white text-slate-400 border-slate-200 hover:border-slate-400'
+                  : 'bg-white text-slate-400 border-slate-200 hover:border-slate-400 font-bold'
               }`}
             >
               {cat}
@@ -113,57 +115,66 @@ export default function Hub() {
           ))}
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-200 border border-slate-200 overflow-hidden rounded-lg shadow-sm">
+        {/* Grid - No background for gap because we're using TiltCard and custom rotations */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           <AnimatePresence mode="popLayout">
-            {filteredProducts.map((product) => (
+            {filteredProducts.map((product, index) => (
               <motion.div
                 layout
                 key={product.id}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
-                className="bg-white p-8 group flex flex-col min-h-[400px]"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3 }}
+                className={cn(
+                  "relative group",
+                  index % 3 === 0 && "rotate-[-1.5deg]",
+                  index % 3 === 1 && "rotate-[1.5deg]",
+                  index % 3 === 2 && "rotate-[-1deg]"
+                )}
               >
-                <div 
-                  className="w-12 h-12 rounded-lg flex items-center justify-center mb-8 border border-slate-100 shadow-sm"
-                  style={{ color: product.color }}
-                >
-                  {product.icon}
-                </div>
-                
-                <div className="mb-4">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-slate-300">
-                    {product.category}
-                  </span>
-                  <h3 className="text-2xl font-black text-[#1A1A2E] mt-1 group-hover:text-[#611CFC] transition-colors">
-                    {product.name}
-                  </h3>
-                </div>
+                <TiltCard tiltAmount={10} glowColor={product.color + '20'}>
+                  <div className="bg-white p-8 group flex flex-col min-h-[420px] rounded-2xl border-2 border-[#1A1A2E] shadow-[8px_8px_0px_0px_rgba(26,26,46,0.05)] hover:shadow-[12px_12px_0px_0px_rgba(26,26,46,0.1)] transition-all duration-300">
+                    <div 
+                      className="w-14 h-14 rounded-xl flex items-center justify-center mb-8 border-2 border-[#1A1A2E]/5 shadow-sm transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
+                      style={{ backgroundColor: product.color + '15', color: product.color }}
+                    >
+                      {product.icon}
+                    </div>
+                    
+                    <div className="mb-4">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-[#611CFC]">
+                        {product.category}
+                      </span>
+                      <h3 className="text-2xl font-black text-[#1A1A2E] mt-1 group-hover:text-[#611CFC] transition-colors">
+                        {product.name}
+                      </h3>
+                    </div>
 
-                <p className="text-slate-500 text-sm font-medium leading-[1.6] mb-12 flex-grow">
-                  {product.description}
-                </p>
+                    <p className="text-slate-500 text-sm font-bold leading-[1.6] mb-12 flex-grow italic">
+                      {product.description}
+                    </p>
 
-                <div className="grid grid-cols-1 gap-3">
-                  <Button
-                    variant="outline"
-                    className="w-full justify-between font-bold border-2 border-[#1A1A2E] hover:bg-[#1A1A2E] hover:text-white rounded-md h-12"
-                  >
-                    TESTAR DEMO
-                    <FlaskConical size={18} />
-                  </Button>
-                  <Button
-                    asChild
-                    className="w-full justify-between font-bold bg-[#611CFC] hover:bg-[#5316db] rounded-md h-12"
-                  >
-                    <Link to="/ativar">
-                      ASSINAR AGORA
-                      <CreditCard size={18} />
-                    </Link>
-                  </Button>
-                </div>
+                    <div className="grid grid-cols-1 gap-3">
+                      <Button
+                        variant="outline"
+                        className="w-full justify-between font-black border-2 border-[#1A1A2E] hover:bg-slate-50 rounded-lg h-12 uppercase tracking-tight"
+                      >
+                        TESTAR DEMO
+                        <FlaskConical size={18} />
+                      </Button>
+                      <Button
+                        asChild
+                        className="w-full justify-between font-black bg-[#1A1A2E] hover:bg-[#611CFC] text-white rounded-lg h-12 uppercase tracking-tight transition-colors border-2 border-[#1A1A2E]"
+                      >
+                        <Link to="/ativar">
+                          ASSINAR AGORA
+                          <CreditCard size={18} />
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
+                </TiltCard>
               </motion.div>
             ))}
           </AnimatePresence>
