@@ -22,7 +22,7 @@ function Logo() {
       <img
         src="/Logo-New.svg"
         alt="LUMI"
-        className="h-10 md:h-14 w-auto transition-transform duration-300 group-hover:scale-105"
+        className="h-12 md:h-16 w-auto transition-transform duration-300 group-hover:scale-105"
       />
     </Link>
   );
@@ -46,8 +46,8 @@ export default function Navbar() {
         }`}
       style={{ borderRadius: '999px', width: '92%', maxWidth: '1100px' }}
     >
-      <div className="mx-auto px-6 flex items-center justify-between gap-4">
-        <div className="flex items-center">
+      <div className="mx-auto px-6 flex items-center justify-between gap-4 w-full">
+        <div className="flex items-center flex-1 justify-start">
           {/* Mobile Menu Trigger */}
           <div className="md:hidden mr-4">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -86,7 +86,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center justify-center flex-1 gap-12">
+        <div className="hidden md:flex items-center justify-center gap-12">
           {NAV_ITEMS.map(item => (
             <Link 
               key={item.id} 
@@ -97,17 +97,18 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
-
-        <Link
-          to="/ativar"
-          className="relative text-[10px] md:text-xs font-black px-5 md:px-7 py-2.5 md:py-3 rounded-full transition-all duration-300 hover:scale-105 hover:brightness-110 shrink-0 ml-2 md:ml-6 shadow-[0_4px_14px_0_rgba(97,28,252,0.3)]"
-          style={{
-            backgroundColor: '#611CFC',
-            color: '#FFFFFF',
-          }}
-        >
-          <span className="relative z-10 uppercase tracking-widest">Ativar agora</span>
-        </Link>
+        <div className="flex flex-1 justify-end items-center">
+          <Link
+            to="/ativar"
+            className="relative text-[10px] md:text-xs font-black px-5 md:px-7 py-2.5 md:py-3 rounded-full transition-all duration-300 hover:scale-105 hover:brightness-110 shrink-0 ml-2 md:ml-6 shadow-[0_4px_14px_0_rgba(97,28,252,0.3)]"
+            style={{
+              backgroundColor: '#611CFC',
+              color: '#FFFFFF',
+            }}
+          >
+            <span className="relative z-10 uppercase tracking-widest">Ativar agora</span>
+          </Link>
+        </div>
       </div>
     </nav>
   );
