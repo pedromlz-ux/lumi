@@ -31,17 +31,17 @@ const NAV_ITEMS = [
       {
         title: 'Para Negócios',
         items: [
-          { label: 'Lumi Flow', description: 'Automação de workflows complexos.', icon: Workflow, link: '/contact' },
-          { label: 'Lumi Desk', description: 'Atendimento inteligente 24/7.', icon: Headset, link: '/contact' },
-          { label: 'Lumi Sales', description: 'Captação e conversão de leads.', icon: Target, link: '/contact' },
+          { label: 'Lumi Flow', description: 'Automação de workflows complexos.', icon: Workflow, link: '/ativar' },
+          { label: 'Lumi Desk', description: 'Atendimento inteligente 24/7.', icon: Headset, link: '/ativar' },
+          { label: 'Lumi Sales', description: 'Captação e conversão de leads.', icon: Target, link: '/ativar' },
         ]
       },
       {
         title: 'Operação',
         items: [
-          { label: 'Lumi Ops', description: 'Backoffice e processos internos.', icon: Settings, link: '/contact' },
-          { label: 'Lumi Pulse', description: 'Insights e BI em tempo real.', icon: Activity, link: '/contact' },
-          { label: 'Lumi Care', description: 'Retenção e sucesso do cliente.', icon: Heart, link: '/contact' },
+          { label: 'Lumi Ops', description: 'Backoffice e processos internos.', icon: Settings, link: '/ativar' },
+          { label: 'Lumi Pulse', description: 'Insights e BI em tempo real.', icon: Activity, link: '/ativar' },
+          { label: 'Lumi Care', description: 'Retenção e sucesso do cliente.', icon: Heart, link: '/ativar' },
         ]
       }
     ]
