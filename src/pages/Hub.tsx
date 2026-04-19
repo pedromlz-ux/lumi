@@ -92,7 +92,7 @@ export default function Hub() {
           </h1>
           <p className="text-lg text-slate-500 max-w-2xl font-medium leading-relaxed">
             Selecione o módulo ideal para a sua operação. Todos os sistemas integrados nativamente 
-            para uma experiência de gestão científica e sem atritos.
+            pela <BrandLumi /> para uma experiência de gestão científica e sem atritos.
           </p>
         </div>
 
