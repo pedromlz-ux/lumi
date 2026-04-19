@@ -20,9 +20,9 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start gap-3">
             <Link to="/" className="group">
               <img
-                src="/Logo-White.png"
+                src="/Logo-New.svg"
                 alt="LUMI"
-                className="h-10 md:h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+                className="h-12 md:h-16 w-auto transition-transform duration-300 group-hover:scale-105 invert brightness-0"
               />
             </Link>
             <p className="text-[10px] md:text-xs font-medium tracking-wide opacity-50 text-white">

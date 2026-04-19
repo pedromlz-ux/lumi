@@ -16,6 +16,7 @@ import { Link } from 'react-router';
 import { BrandLumi } from '@/components/BrandLumi';
 import { cn } from '@/lib/utils';
 import TiltCard from '@/components/TiltCard';
+import OrganicGraphics from '@/components/OrganicGraphics';
 
 const CATEGORIES = ['Todos', 'Vendas', 'Atendimento', 'Backoffice', 'Analytics'];
 
@@ -79,41 +80,51 @@ export default function Hub() {
   }, [filter]);
 
   return (
-    <div className="min-h-screen pt-32 pb-20 tech-grid font-inter">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-16">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-12 h-1 bg-[#611CFC]" />
-            <span className="text-xs font-black uppercase tracking-[0.2em] text-[#611CFC]">
-              Ecossistema Lumi
-            </span>
+    <div className="min-h-screen font-inter relative">
+      {/* Header & Filters Section (White) */}
+      <section className="pt-32 pb-16 bg-white border-b border-slate-100 relative z-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="mb-16">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-1 bg-[#611CFC]" />
+              <span className="text-xs font-black uppercase tracking-[0.2em] text-[#611CFC]">
+                Ecossistema Lumi
+              </span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-[#1A1A2E] mb-6">
+              LUMI <span className="opacity-10 text-stroke">HUB</span>
+            </h1>
+            <p className="text-lg text-slate-500 max-w-2xl font-bold leading-relaxed">
+              Selecione o módulo ideal para a sua operação. Todos os sistemas integrados nativamente 
+              pela <BrandLumi /> para uma experiência de gestão científica e sem atritos.
+            </p>
           </div>
-          <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-[#1A1A2E] mb-6">
-            LUMI <span className="opacity-20 text-stroke">HUB</span>
-          </h1>
-          <p className="text-lg text-slate-500 max-w-2xl font-bold leading-relaxed">
-            Selecione o módulo ideal para a sua operação. Todos os sistemas integrados nativamente 
-            pela <BrandLumi /> para uma experiência de gestão científica e sem atritos.
-          </p>
-        </div>
 
-        {/* Filters */}
-        <div className="flex flex-wrap gap-2 mb-12 pb-6 border-b border-slate-200">
-          {CATEGORIES.map(cat => (
-            <button
-              key={cat}
-              onClick={() => setFilter(cat)}
-              className={`px-6 py-2 rounded-md text-xs font-black uppercase tracking-widest transition-all duration-200 border ${
-                filter === cat 
-                  ? 'bg-[#1A1A2E] text-white border-[#1A1A2E]' 
-                  : 'bg-white text-slate-400 border-slate-200 hover:border-slate-400 font-bold'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+          {/* Filters */}
+          <div className="flex flex-wrap gap-2">
+            {CATEGORIES.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setFilter(cat)}
+                className={`px-6 py-2 rounded-md text-xs font-black uppercase tracking-widest transition-all duration-200 border ${
+                  filter === cat 
+                    ? 'bg-[#1A1A2E] text-white border-[#1A1A2E]' 
+                    : 'bg-white text-slate-400 border-slate-200 hover:border-slate-400 font-bold'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
+      </section>
+
+      {/* Grid Section (Teal) */}
+      <section className="py-20 tech-grid relative overflow-hidden" style={{ backgroundColor: '#4ECDC4' }}>
+        <OrganicGraphics className="opacity-20 absolute -top-40 -left-60 scale-150 -rotate-12 pointer-events-none" />
+        <OrganicGraphics className="opacity-10 absolute top-1/2 -right-40 scale-125 rotate-45 pointer-events-none" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Grid - No background for gap because we're using TiltCard and custom rotations */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -197,7 +208,7 @@ export default function Hub() {
             <ArrowRight size={20} />
           </Link>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

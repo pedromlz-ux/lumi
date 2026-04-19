@@ -35,7 +35,7 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
-      <div className="relative min-h-screen" style={{ backgroundColor: '#F9F9FB' }}>
+      <div className="relative min-h-screen">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
