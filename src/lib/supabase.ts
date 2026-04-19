@@ -10,4 +10,4 @@ if (!supabaseUrl || !supabaseAnonKey) {
 // Only create the client if we have the URL, to prevent "supabaseUrl is required" crash
 export const supabase = (supabaseUrl && supabaseAnonKey) 
   ? createClient(supabaseUrl, supabaseAnonKey)
-  : null as any; 
+  : null;

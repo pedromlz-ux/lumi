@@ -30,8 +30,7 @@ class Point {
   update(
     scrollForce: number,
     mouseX: number | null,
-    mouseY: number | null,
-    _pointRadius: number
+    mouseY: number | null
   ) {
     const force = (this.targetY - this.y) * this.k;
     this.vy += force;
@@ -66,7 +65,6 @@ function drawRow(
   ctx: CanvasRenderingContext2D,
   points: Point[],
   pointRadius: number,
-  _tension: number,
   offsetX: number
 ) {
   ctx.save();
@@ -172,9 +170,9 @@ export default function ElasticWave() {
       ctx.clearRect(0, 0, width, height);
 
       for (const row of rows) {
-        drawRow(ctx, row.points, row.pointRadius, 0.5, 0);
+        drawRow(ctx, row.points, row.pointRadius, 0);
         for (const pt of row.points) {
-          pt.update(scrollEnergy, mouseX, mouseY, row.pointRadius);
+          pt.update(scrollEnergy, mouseX, mouseY);
         }
       }
 

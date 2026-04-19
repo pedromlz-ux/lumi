@@ -20,6 +20,9 @@ export default function Contact() {
     };
 
     try {
+      if (!supabase) {
+        throw new Error('Supabase client not initialized');
+      }
       const { error } = await supabase
         .from('leads')
         .insert([data]);
@@ -30,7 +33,7 @@ export default function Contact() {
         description: 'Retornaremos em menos de 24 horas.',
       });
       e.currentTarget.reset();
-    } catch (error: any) {
+    } catch (error) {
       console.error('Error submitting form:', error);
       toast.error('Erro ao enviar mensagem', {
         description: 'Por favor, tente novamente mais tarde ou contate-nos por e-mail.',
