@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { motion, AnimatePresence } from 'framer-motion';
 import FloatingParticles from '../components/FloatingParticles';
 import { BrandLumi } from '@/components/BrandLumi';
+import ProductCarousel from '../components/ProductCarousel';
 
 export default function Hero() {
   const tagRef = useRef<HTMLSpanElement>(null);
@@ -170,6 +171,10 @@ export default function Hero() {
             </div>
           </div>
         </div>
+      </div>
+      
+      <div className="mt-12 sm:mt-16">
+        <ProductCarousel />
       </div>
     </section>
   );

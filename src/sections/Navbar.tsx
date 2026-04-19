@@ -22,7 +22,7 @@ function Logo() {
       <img
         src="/Logo-New.svg"
         alt="LUMI"
-        className="h-12 md:h-16 w-auto transition-transform duration-300 group-hover:scale-105"
+        className="h-[62px] md:h-[84px] w-auto transition-transform duration-300 group-hover:scale-105"
       />
     </Link>
   );
