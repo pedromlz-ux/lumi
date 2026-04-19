@@ -208,7 +208,8 @@ export default function Hub() {
             <ArrowRight size={20} />
           </Link>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+  </div>
   );
 }

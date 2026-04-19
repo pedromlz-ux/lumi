@@ -41,7 +41,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="relative pt-32 pb-24 overflow-hidden min-h-screen">
+    <div className="relative pt-24 pb-24 overflow-hidden min-h-screen">
       <FloatingParticles count={15} colors={['#611CFC', '#4ECDC4']} className="opacity-20" />
       <OrganicGraphics className="opacity-20 fixed -bottom-20 -right-20 scale-150 rotate-12" />
       
