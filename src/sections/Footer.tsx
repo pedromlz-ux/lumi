@@ -4,6 +4,7 @@ export default function Footer() {
   const routes = {
     'Termos': '/terms',
     'Privacidade': '/privacy',
+    'Blog': '/blog',
     'Contato': '/contact'
   };
 

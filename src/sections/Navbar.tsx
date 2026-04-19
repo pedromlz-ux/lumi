@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
 import { DropdownNavigation } from '../components/ui/dropdown-navigation';
-import { 
-  Workflow, 
-  Headset, 
-  Target, 
-  Settings, 
-  Activity, 
+import {
+  Workflow,
+  Headset,
+  Target,
+  Settings,
+  Activity,
   Heart,
   Menu,
 } from 'lucide-react';
@@ -24,30 +24,9 @@ import {
 } from "../components/ui/accordion";
 
 const NAV_ITEMS = [
-  {
-    id: 1,
-    label: 'Soluções',
-    subMenus: [
-      {
-        title: 'Para Negócios',
-        items: [
-          { label: 'Lumi Flow', description: 'Automação de workflows complexos.', icon: Workflow, link: '/ativar' },
-          { label: 'Lumi Desk', description: 'Atendimento inteligente 24/7.', icon: Headset, link: '/ativar' },
-          { label: 'Lumi Sales', description: 'Captação e conversão de leads.', icon: Target, link: '/ativar' },
-        ]
-      },
-      {
-        title: 'Operação',
-        items: [
-          { label: 'Lumi Ops', description: 'Backoffice e processos internos.', icon: Settings, link: '/ativar' },
-          { label: 'Lumi Pulse', description: 'Insights e BI em tempo real.', icon: Activity, link: '/ativar' },
-          { label: 'Lumi Care', description: 'Retenção e sucesso do cliente.', icon: Heart, link: '/ativar' },
-        ]
-      }
-    ]
-  },
-  { id: 2, label: 'Recursos', link: '#' },
-  { id: 3, label: 'Contato', link: '/contact' }
+  { id: 1, label: 'Lumi Hub', link: '/hub' },
+  { id: 2, label: 'Blog', link: '/blog' },
+  { id: 4, label: 'Contato', link: '/contact' }
 ];
 
 function Logo({ isDark }: { isDark: boolean }) {
@@ -76,134 +55,74 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-full border-b ${
         scrolled
-          ? isDarkPage
-            ? 'bg-white/10 backdrop-blur-2xl shadow-[0_8px_40px_rgba(0,0,0,0.3)] border border-white/10 scale-[0.98]'
-            : 'bg-white/85 backdrop-blur-2xl shadow-[0_8px_40px_rgba(97,28,252,0.12)] scale-[0.98]'
-          : isDarkPage
-            ? 'bg-white/5 backdrop-blur-md border border-white/5'
-            : 'bg-white/40 backdrop-blur-md border border-transparent'
+          ? 'bg-white/95 backdrop-blur-md border-slate-200 shadow-sm py-3'
+          : 'bg-transparent border-transparent py-5'
       }`}
-      style={{ borderRadius: '24px', padding: '6px 20px', maxWidth: '1100px', width: '94%' }}
+      style={{ maxWidth: '100%' }}
     >
-      <div className="flex items-center justify-between">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 flex items-center justify-between">
         <div className="flex items-center">
           {/* Mobile Menu Trigger */}
-          <div className="md:hidden mr-2">
+          <div className="md:hidden mr-4">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <button 
-                  className={`p-2 rounded-lg transition-colors ${
-                    isDarkPage ? 'text-white hover:bg-white/5' : 'text-[#1A1A2E] hover:bg-[#611CFC]/5'
-                  }`}
+                <button
+                  className="p-2 rounded-md transition-colors text-[#1A1A2E] hover:bg-[#611CFC]/5"
                 >
                   <Menu size={24} />
                 </button>
               </SheetTrigger>
-              <SheetContent side="left" className={isDarkPage ? 'bg-[#0A0A0B] border-white/10' : 'bg-white'}>
-                <SheetHeader className="mb-8">
+              <SheetContent side="left" className="bg-white border-slate-200">
+                <SheetHeader className="mb-8 border-b pb-4">
                   <div className="h-8 flex items-center">
-                    <Logo isDark={isDarkPage} />
+                    <Logo isDark={false} />
                   </div>
                 </SheetHeader>
-                <div className="mt-8 flex flex-col gap-2">
-                  <Accordion type="single" collapsible className="w-full">
-                    {NAV_ITEMS.map((item) => (
-                      <div key={item.id}>
-                        {item.subMenus ? (
-                          <AccordionItem value={`item-${item.id}`} className="border-none">
-                            <AccordionTrigger 
-                              className={`text-lg font-bold hover:no-underline py-4 px-2 tracking-tight ${
-                                isDarkPage ? 'text-white hover:text-[#4ECDC4]' : 'text-[#1A1A2E] hover:text-[#611CFC]'
-                              }`}
-                            >
-                              {item.label}
-                            </AccordionTrigger>
-                            <AccordionContent>
-                              <div className="pl-4 space-y-6 pt-2 pb-4">
-                                {item.subMenus.map((sub) => (
-                                  <div key={sub.title}>
-                                    <p className={`text-[10px] font-black uppercase tracking-widest mb-3 pl-2 ${
-                                      isDarkPage ? 'text-white/30' : 'text-[#611CFC]/40'
-                                    }`}>
-                                      {sub.title}
-                                    </p>
-                                    <div className="space-y-4">
-                                      {sub.items.map((subItem) => (
-                                        <Link
-                                          key={subItem.label}
-                                          to={subItem.link || '#'}
-                                          onClick={() => setIsOpen(false)}
-                                          className={`flex items-center gap-3 p-2 rounded-xl border transition-all group ${
-                                            isDarkPage 
-                                              ? 'border-white/5 hover:border-white/10 hover:bg-white/5' 
-                                              : 'border-transparent hover:border-[#611CFC]/10 hover:bg-[#611CFC]/5'
-                                          }`}
-                                        >
-                                          <div 
-                                            className={`w-8 h-8 rounded-lg shadow-sm flex items-center justify-center transition-colors ${
-                                              isDarkPage 
-                                                ? 'bg-white/5 text-[#4ECDC4] group-hover:bg-[#4ECDC4] group-hover:text-white'
-                                                : 'bg-white text-[#611CFC] group-hover:bg-[#611CFC] group-hover:text-white'
-                                            }`}
-                                          >
-                                            <subItem.icon size={16} />
-                                          </div>
-                                          <span className={`text-sm font-bold ${
-                                            isDarkPage ? 'text-white/70' : 'text-[#1A1A2E]'
-                                          }`}>{subItem.label}</span>
-                                        </Link>
-                                      ))}
-                                    </div>
-                                  </div>
-                                ))}
-                              </div>
-                            </AccordionContent>
-                          </AccordionItem>
-                        ) : (
-                          <Link
-                            to={item.link || '#'}
-                            onClick={() => setIsOpen(false)}
-                            className={`flex items-center w-full py-4 px-2 text-lg font-bold transition-colors tracking-tight ${
-                              isDarkPage ? 'text-white hover:text-[#4ECDC4]' : 'text-[#1A1A2E] hover:text-[#611CFC]'
-                            }`}
-                          >
-                            {item.label}
-                          </Link>
-                        )}
-                      </div>
-                    ))}
-                  </Accordion>
+                <div className="mt-8 flex flex-col gap-1">
+                  {NAV_ITEMS.map((item) => (
+                    <Link
+                      key={item.id}
+                      to={item.link}
+                      onClick={() => setIsOpen(false)}
+                      className="flex items-center w-full py-4 px-4 text-base font-bold text-[#1A1A2E] hover:bg-slate-50 transition-colors uppercase tracking-widest border-l-2 border-transparent hover:border-[#611CFC]"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
                 </div>
               </SheetContent>
             </Sheet>
           </div>
-          
+
           <div className="flex-shrink-0 flex items-center h-8">
-            <Logo isDark={isDarkPage} />
+            <Logo isDark={false} />
           </div>
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center justify-center flex-1">
-          <DropdownNavigation navItems={NAV_ITEMS} isDark={isDarkPage} />
+        <div className="hidden md:flex items-center justify-center flex-1 gap-12">
+          {NAV_ITEMS.map(item => (
+            <Link 
+              key={item.id} 
+              to={item.link}
+              className="text-xs font-black uppercase tracking-[0.2em] text-[#1A1A2E] hover:text-[#611CFC] transition-colors"
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
 
         <Link
           to="/ativar"
-          className="relative text-[10px] md:text-sm font-semibold px-4 md:px-6 py-2 md:py-2.5 rounded-full transition-all duration-300 hover:scale-105 overflow-hidden group ml-2 md:ml-6 shrink-0"
+          className="relative text-[10px] md:text-xs font-black px-4 md:px-6 py-2 md:py-3 rounded-none transition-all duration-200 hover:brightness-110 shrink-0 ml-2 md:ml-6 border-b-2 border-r-2 border-[#1A1A2E]"
           style={{
-            background: 'linear-gradient(135deg, #611CFC 0%, #7C3AED 100%)',
+            backgroundColor: '#611CFC',
             color: '#FFFFFF',
-            boxShadow: '0 4px 20px rgba(97, 28, 252, 0.3)',
           }}
         >
-          <span className="relative z-10">Ativar agora</span>
-          <div
-            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            style={{ background: 'linear-gradient(135deg, #7C3AED 0%, #611CFC 100%)' }}
-          />
+          <span className="relative z-10 uppercase tracking-widest">Ativar agora</span>
         </Link>
       </div>
     </nav>
