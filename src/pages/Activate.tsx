@@ -2,6 +2,7 @@ import { Check, ArrowRight, ShieldCheck, Zap, Globe, Building2 } from 'lucide-re
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router';
 import { BrandLumi } from '@/components/BrandLumi';
+import OrganicGraphics from '@/components/OrganicGraphics';
 
 const TIERS = [
   {
@@ -67,17 +68,20 @@ const TIERS = [
 
 export default function Activate() {
   return (
-    <div className="min-h-screen pt-32 pb-24 tech-grid font-inter">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <div className="min-h-screen pt-32 pb-24 tech-grid font-inter relative overflow-hidden" style={{ backgroundColor: '#4ECDC4' }}>
+      <OrganicGraphics className="opacity-20 fixed -top-40 -left-60 scale-150 -rotate-12 pointer-events-none" />
+      <OrganicGraphics className="opacity-10 fixed top-1/2 -right-40 scale-125 rotate-45 pointer-events-none" />
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-[#611CFC] mb-6 bg-[#611CFC]/5 px-4 py-2 border border-[#611CFC]/20 rounded-sm">
+          <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-white underline-offset-4 mb-6 bg-[#1A1A2E]/10 px-4 py-2 border border-[#1A1A2E]/20 rounded-sm">
             Tabelas de Ativação
           </div>
           <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-[#1A1A2E] mb-8">
             PLANOS <span className="opacity-20 text-stroke">ESCALÁVEIS</span>
           </h1>
-          <p className="text-slate-500 max-w-2xl mx-auto font-bold leading-relaxed">
+          <p className="text-[#1A1A2E]/70 max-w-2xl mx-auto font-bold leading-relaxed">
             Estrutura de preços unificada para impulsionar sua operação com a inteligência da <BrandLumi />. 
             Contrate por sistema ou aproveite os descontos progressivos dos nossos bundles.
           </p>
