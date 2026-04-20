@@ -138,22 +138,8 @@ export default function Hub() {
             </motion.div>
           </div>
 
-          {/* Filters - Centralized */}
-          <div className="flex flex-wrap gap-2 justify-center">
-            {CATEGORIES.map(cat => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`px-5 py-1.5 rounded-md text-xs font-black uppercase tracking-widest transition-all duration-200 border ${
-                  filter === cat 
-                    ? 'bg-[#1A1A2E] text-white border-[#1A1A2E]' 
-                    : 'bg-white text-slate-400 border-slate-200 hover:border-slate-400 font-bold'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+
+<line_omitted>
         </div>
       </section>
 
@@ -163,9 +149,25 @@ export default function Hub() {
         <OrganicGraphics className="opacity-10 absolute top-1/2 -right-40 scale-125 rotate-45 pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          {/* Filters - Moved to Teal Section */}
+          <div className="flex flex-wrap gap-2 justify-center mb-16">
+            {CATEGORIES.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setFilter(cat)}
+                className={`px-6 py-2 rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-200 shadow-lg ${
+                  filter === cat 
+                    ? 'bg-[#1A1A2E] text-white' 
+                    : 'bg-white/90 backdrop-blur-sm text-[#1A1A2E] hover:bg-white'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
 
-        {/* Grid - No background for gap because we're using TiltCard and custom rotations */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {/* Grid - No background for gap because we're using TiltCard and custom rotations */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           <AnimatePresence mode="popLayout">
             {filteredProducts.map((product, index) => (
               <motion.div
