@@ -12,7 +12,7 @@ interface Message {
 }
 
 
-<line_omitted>
+
 
 const SYSTEM_PROMPT = `Você é a Lúmia, a inteligência artificial orquestradora da plataforma Lúmia. 
 Seu posicionamento de marca é sofisticado, humano, prestativo e altamente especializado em operações e automação.
@@ -224,7 +224,7 @@ const LumiaChatbot: React.FC = () => {
               </motion.div>
 
 
-<line_omitted>
+
 
               {messages.map((message) => (
                 <motion.div
