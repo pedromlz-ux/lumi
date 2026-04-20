@@ -192,8 +192,12 @@ const LumiaChatbot: React.FC = () => {
                   </div>
                 </div>
                 <button 
-                  onClick={handleToggle}
-                  className="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleToggle();
+                  }}
+                  className="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors relative z-50 cursor-pointer"
+                  title="Fechar Chatbot"
                 >
                   <X size={20} />
                 </button>
