@@ -59,7 +59,7 @@ export default function Metrics() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full py-16 lg:py-20" style={{ backgroundColor: '#F9F9FB' }}>
+    <section ref={sectionRef} className="relative w-full py-4 lg:py-8" style={{ backgroundColor: '#F9F9FB' }}>
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6" style={{ perspective: '1000px' }}>
           {metrics.map((m) => (

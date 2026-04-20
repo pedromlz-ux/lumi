@@ -60,23 +60,28 @@ export default function CTAFinal() {
             E talvez isso seja exatamente o que está faltando.
           </p>
 
-          <Link
-            to="/ativar"
-            className="cta-item inline-flex items-center gap-3 text-lg font-bold px-12 py-6 rounded-2xl transition-all duration-300 hover:scale-105 group"
-            style={{
-              backgroundColor: '#1A1A2E',
-              color: '#FFFFFF',
-              boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
-            }}
-          >
-            Ativar agora
-            <svg
-              width="22" height="22" viewBox="0 0 22 22" fill="none"
-              className="transition-transform duration-300 group-hover:translate-x-1"
+          <div className="cta-item flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Link
+              to="/hub"
+              className="group relative inline-flex items-center gap-3 text-lg font-bold px-10 py-5 bg-[#1A1A2E] text-white rounded-2xl transition-all duration-300 hover:scale-105 shadow-[0_12px_40px_rgba(0,0,0,0.3)]"
             >
-              <path d="M4 11H18M18 11L13 6M18 11L13 16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </Link>
+              Conhecer o Hub
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
+                <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
+
+            <Link
+              to="/contact"
+              className="group relative inline-flex items-center gap-3 text-lg font-bold px-10 py-5 bg-white/10 backdrop-blur-md border border-[#1A1A2E]/20 text-[#1A1A2E] rounded-2xl transition-all duration-300 hover:bg-white/20 hover:scale-105"
+            >
+              Projeto Personalizado
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="transition-transform duration-300 group-hover:rotate-45">
+                <path d="M10 4V16M16 10H4" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-0"/>
+                <path d="M5 15L15 5M15 5H8M15 5V12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

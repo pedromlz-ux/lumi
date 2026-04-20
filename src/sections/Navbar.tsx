@@ -11,6 +11,7 @@ import {
 } from "../components/ui/sheet";
 
 const NAV_ITEMS = [
+  { id: 0, label: 'Home', link: '/' },
   { id: 1, label: 'Lumi Hub', link: '/hub' },
   { id: 2, label: 'Blog', link: '/blog' },
   { id: 4, label: 'Contato', link: '/contact' }

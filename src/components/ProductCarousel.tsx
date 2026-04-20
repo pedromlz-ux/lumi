@@ -74,7 +74,14 @@ const DUPLICATED_PRODUCTS = [...PRODUCTS, ...PRODUCTS];
 
 export default function ProductCarousel() {
   return (
-    <div className="w-full overflow-hidden py-16 sm:py-24" style={{ backgroundColor: '#4ECDC4' }}>
+    <div 
+      className="w-full overflow-hidden py-16 sm:py-24" 
+      style={{ 
+        backgroundImage: 'url(/carousel-texture.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    >
       <div className="relative flex whitespace-nowrap">
         <motion.div
           className="flex gap-6 px-3"

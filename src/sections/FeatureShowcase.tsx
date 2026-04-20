@@ -303,20 +303,19 @@ export default function FeatureShowcase() {
               className="lg:sticky lg:top-32"
             >
               <span
-                className="text-xs font-semibold uppercase tracking-[0.5px]"
+                className="text-xs font-black uppercase tracking-[0.2em]"
                 style={{ color: '#4ECDC4' }}
               >
-                Capabilities
+                Hub Ecosystem
               </span>
               <h2
-                className="mt-4 text-3xl sm:text-4xl lg:text-[48px] font-bold leading-[1.2] tracking-[-1px]"
+                className="mt-4 text-3xl sm:text-4xl lg:text-[48px] font-black leading-[1.2] tracking-[-1.5px]"
                 style={{ color: '#1A1A2E' }}
               >
-                Where data meets destiny
+                A camada inteligente da sua operacão
               </h2>
-              <p className="mt-4 text-base leading-relaxed" style={{ color: '#6B6B78' }}>
-                Every feature is designed to make your workflows smarter, faster,
-                and more intuitive. Experience the future of work automation.
+              <p className="mt-4 text-base sm:text-lg leading-relaxed font-medium" style={{ color: '#6B6B78' }}>
+                Orquestramos sistemas de IA que <span className="text-[#1A1A2E] font-bold">eliminam a fricç&atilde;o</span> e organizam fluxos complexos em uma &uacute;nica experi&ecirc;ncia fluida e escal&aacute;vel.
               </p>
             </div>
           </div>

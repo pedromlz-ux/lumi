@@ -68,18 +68,18 @@ const TIERS = [
 
 export default function Activate() {
   return (
-    <div className="min-h-screen pt-32 pb-24 tech-grid font-inter relative overflow-hidden" style={{ backgroundColor: '#4ECDC4' }}>
+    <div className="min-h-screen pt-32 pb-24 tech-grid font-inter relative overflow-hidden" style={{ backgroundColor: '#FFFFFF' }}>
       <OrganicGraphics className="opacity-20 fixed -top-40 -left-60 scale-150 -rotate-12 pointer-events-none" />
       <OrganicGraphics className="opacity-10 fixed top-1/2 -right-40 scale-125 rotate-45 pointer-events-none" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-white underline-offset-4 mb-6 bg-[#1A1A2E]/10 px-4 py-2 border border-[#1A1A2E]/20 rounded-sm">
+          <div className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-white underline-offset-4 mb-6 bg-[#611CFC] px-5 py-2.5 border border-[#611CFC] rounded-full shadow-lg shadow-[#611CFC]/20">
             Tabelas de Ativação
           </div>
           <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-[#1A1A2E] mb-8">
-            PLANOS <span className="opacity-20 text-stroke">ESCALÁVEIS</span>
+            PLANOS <span className="text-[#4ECDC4]">ESCALÁVEIS</span>
           </h1>
           <p className="text-[#1A1A2E]/70 max-w-2xl mx-auto font-bold leading-relaxed">
             Estrutura de preços unificada para impulsionar sua operação com a inteligência da <BrandLumi />. 
@@ -145,10 +145,10 @@ export default function Activate() {
 
               <Button
                 asChild={tier.cta !== 'Falar com Especialista'}
-                className={`w-full py-7 font-black uppercase tracking-widest rounded-xl transition-all duration-200 border-2 ${
+                className={`w-full py-7 font-black uppercase tracking-widest rounded-xl transition-all duration-200 border ${
                   tier.popular 
-                    ? 'bg-[#611CFC] hover:bg-[#5316db] text-white border-[#611CFC]' 
-                    : 'bg-[#1A1A2E] hover:bg-slate-800 text-white border-[#1A1A2E]'
+                    ? 'bg-[#611CFC] hover:bg-[#5316db] text-white border-transparent' 
+                    : 'bg-[#1A1A2E] hover:bg-slate-800 text-white border-transparent'
                 }`}
               >
                 {tier.cta === 'Falar com Especialista' ? (

@@ -3,13 +3,16 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import TiltCard from '../components/TiltCard';
 import FloatingParticles from '../components/FloatingParticles';
+import Counter from '../components/Counter';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const capabilities = [
   {
-    title: 'Resposta automática',
-    desc: 'Cliente chamou? Já foi atendido.',
+    title: 'Atendimento Inteligente 24/7',
+    desc: 'Sua empresa nunca dorme. Respostas instantâneas que qualificam leads e resolvem dúvidas sem depender de intervenção humana.',
+    metricValue: '24h',
+    metricLabel: 'ativo',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
         <path d="M21 11.5C21.0034 12.8199 20.6951 14.1219 20.1 15.3C19.3944 16.7118 18.3098 17.8992 16.9674 18.7293C15.6251 19.5594 14.0782 19.9994 12.5 20C11.1801 20.0035 9.87214 19.6951 8.7 19.1L3 21L4.9 15.3C4.30493 14.1219 3.99656 12.8199 4 11.5C4.00061 9.92179 4.44061 8.37488 5.27072 7.03258C6.10083 5.69028 7.28825 4.6056 8.7 3.90003C9.87812 3.30496 11.1801 2.99659 12.5 3.00003H13C15.0843 3.11502 17.053 3.99479 18.5291 5.47089C20.0052 6.94699 20.885 8.91568 21 11V11.5Z" stroke="#611CFC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -19,8 +22,10 @@ const capabilities = [
     glow: 'rgba(97, 28, 252, 0.1)',
   },
   {
-    title: 'Vendas no piloto automático',
-    desc: 'A conversa anda. O cliente decide.',
+    title: 'Vendas e Conversão Direta',
+    desc: 'Transforme conversas em receita. Fluxos automatizados que guiam o cliente do interesse ao pagamento confirmado sem fricção.',
+    metricValue: '10x',
+    metricLabel: 'mais rápido',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
         <path d="M12 2V6M12 18V22M4.93 4.93L7.76 7.76M16.24 16.24L19.07 19.07M2 12H6M18 12H22M4.93 19.07L7.76 16.24M16.24 7.76L19.07 4.93" stroke="#4ECDC4" strokeWidth="2" strokeLinecap="round"/>
@@ -31,8 +36,10 @@ const capabilities = [
     glow: 'rgba(78, 205, 196, 0.1)',
   },
   {
-    title: 'Processos organizados',
-    desc: 'Tudo no lugar. Sem esforço.',
+    title: 'Operação Sistematizada',
+    desc: 'Elimine o caos operacional. Organize processos, processe dados e escale sua entrega com uma estrutura que funciona sozinha.',
+    metricValue: '-80%',
+    metricLabel: 'no operacional',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
         <path d="M9 11L12 14L22 4M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="#611CFC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -102,11 +109,21 @@ export default function Capabilities() {
                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3" style={{ backgroundColor: c.accent }}>
                   {c.icon}
                 </div>
+
+                <div className="flex items-baseline gap-2 mb-4">
+                  <Counter
+                    target={c.metricValue}
+                    className="text-4xl font-extrabold tracking-[-2px]"
+                    style={{ color: '#1A1A2E' }}
+                  />
+                  <span className="text-base font-bold" style={{ color: '#611CFC' }}>{c.metricLabel}</span>
+                </div>
+
                 <h3 className="text-xl font-bold mb-3" style={{ color: '#1A1A2E' }}>{c.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: '#6B6B78' }}>{c.desc}</p>
 
                 {/* Bottom arrow that appears on hover */}
-                <div className="mt-6 flex items-center gap-2 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0" style={{ color: '#611CFC' }}>
+                <div className="mt-8 flex items-center gap-2 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0" style={{ color: '#611CFC' }}>
                   <span>Saiba mais</span>
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7H11M11 7L7 3M11 7L7 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </div>
