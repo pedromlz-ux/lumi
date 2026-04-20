@@ -44,7 +44,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="relative pt-20 pb-24 overflow-hidden min-h-screen">
+    <div className="relative pt-40 pb-24 overflow-hidden min-h-screen">
       <FloatingParticles count={15} colors={['#611CFC', '#4ECDC4']} className="opacity-20" />
       <OrganicGraphics className="opacity-20 fixed -bottom-20 -right-20 scale-150 rotate-12" />
       
@@ -61,7 +61,7 @@ export default function Contact() {
               Vamos transformar seu <span className="text-gradient">negócio</span> hoje?
             </h1>
             <p className="text-lg text-[#6B6B78] mb-12 max-w-lg">
-              Tem uma dúvida técnica ou quer saber como a LUMI pode escalar sua empresa? Nossa equipe está pronta para conversar.
+              Tem uma dúvida técnica ou quer saber como a <span className="font-lumi text-[0.85em]">lumi</span> pode escalar sua empresa? Nossa equipe está pronta para conversar.
             </p>
 
             <div className="space-y-8">
