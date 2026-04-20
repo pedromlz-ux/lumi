@@ -11,11 +11,8 @@ interface Message {
   timestamp: Date;
 }
 
-const SUGGESTED_QUESTIONS = [
-  "Como a Lúmia automatiza meu atendimento?",
-  "Quais processos vocês mapeiam gratuitamente?",
-  "Como escalar sem aumentar minha equipe?",
-];
+
+<line_omitted>
 
 const SYSTEM_PROMPT = `Você é a Lúmia, a inteligência artificial orquestradora da plataforma Lúmia. 
 Seu posicionamento de marca é sofisticado, humano, prestativo e altamente especializado em operações e automação.
@@ -226,26 +223,8 @@ const LumiaChatbot: React.FC = () => {
                 </div>
               </motion.div>
 
-              {/* Suggested Questions */}
-              {messages.length === 1 && (
-                <div className="flex flex-col gap-2 mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
-                  <p className="text-[10px] font-black uppercase text-[#611CFC] tracking-widest mb-1 ml-1 flex items-center gap-2">
-                    <Sparkles size={10} /> Sugestões de Orquestração
-                  </p>
-                  {SUGGESTED_QUESTIONS.map((q, i) => (
-                    <button
-                      key={i}
-                      onClick={() => handleSend(q)}
-                      className="text-left p-3 rounded-2xl bg-white border border-[#611CFC]/10 text-[#1A1A2E] text-xs font-bold hover:bg-[#611CFC]/5 hover:border-[#611CFC]/30 transition-all active:scale-[0.98] shadow-sm flex items-center gap-3 group"
-                    >
-                      <div className="w-6 h-6 rounded-lg bg-[#611CFC]/5 flex items-center justify-center group-hover:bg-[#611CFC]/10">
-                        <MessageCircle size={12} className="text-[#611CFC]" />
-                      </div>
-                      {q}
-                    </button>
-                  ))}
-                </div>
-              )}
+
+<line_omitted>
 
               {messages.map((message) => (
                 <motion.div
