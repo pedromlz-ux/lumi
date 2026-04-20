@@ -82,12 +82,12 @@ export default function Hub() {
   return (
     <div className="min-h-screen font-inter relative">
       {/* Header & Filters Section (White) */}
-      <section className="pt-40 pb-0 bg-white border-b border-slate-100 relative z-20 overflow-hidden">
+      <section className="pt-40 pb-0 bg-white relative z-20 overflow-hidden">
         {/* Decorative background element for the "hole" */}
         <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50/50 -skew-x-12 translate-x-20 pointer-events-none -z-10" />
         
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 mb-3">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             {/* Left side: Content */}
             <div className="flex-1 w-full lg:max-w-2xl">
               <div className="flex items-center gap-3 mb-3">
@@ -144,7 +144,7 @@ export default function Hub() {
       </section>
 
       {/* Grid Section (Teal) */}
-      <section className="pt-10 pb-20 tech-grid relative overflow-hidden" style={{ backgroundColor: '#4ECDC4' }}>
+      <section className="pt-20 pb-20 tech-grid relative overflow-hidden" style={{ backgroundColor: '#4ECDC4' }}>
         <OrganicGraphics className="opacity-20 absolute -top-40 -left-60 scale-150 -rotate-12 pointer-events-none" />
         <OrganicGraphics className="opacity-10 absolute top-1/2 -right-40 scale-125 rotate-45 pointer-events-none" />
 
