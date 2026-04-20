@@ -203,10 +203,11 @@
 
 /* Brand Typography */
 .font-lumi {
-  font-family: 'Pacifico', cursive;
-  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
   color: #611CFC;
   display: inline-block;
+  letter-spacing: -0.02em;
 }
 
 /* Shimmer border effect */
