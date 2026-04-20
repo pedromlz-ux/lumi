@@ -13,10 +13,13 @@ export default function Contact() {
     setIsSubmitting(true);
     
     const formData = new FormData(e.currentTarget);
+    // Basic proactive sanitization to prevent JS injection
+    const sanitize = (text: any) => String(text).replace(/<[^>]*>?/gm, '').trim();
+
     const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      message: formData.get('message'),
+      name: sanitize(formData.get('name')),
+      email: sanitize(formData.get('email')),
+      message: sanitize(formData.get('message')),
     };
 
     try {

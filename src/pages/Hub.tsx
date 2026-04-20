@@ -23,7 +23,7 @@ const CATEGORIES = ['Todos', 'Vendas', 'Atendimento', 'Backoffice', 'Analytics']
 const PRODUCTS = [
   {
     id: 'flow',
-    name: '<span className="font-lumi">Lumi</span> Flow',
+    name: 'Flow',
     category: 'Backoffice',
     description: 'Automação de workflows complexos e orquestração de processos internos.',
     icon: <Workflow className="w-6 h-6" />,
@@ -31,7 +31,7 @@ const PRODUCTS = [
   },
   {
     id: 'desk',
-    name: '<span className="font-lumi">Lumi</span> Desk',
+    name: 'Desk',
     category: 'Atendimento',
     description: 'Sistema de suporte inteligente com IA generativa disponível 24/7.',
     icon: <Headset className="w-6 h-6" />,
@@ -39,7 +39,7 @@ const PRODUCTS = [
   },
   {
     id: 'sales',
-    name: '<span className="font-lumi">Lumi</span> Sales',
+    name: 'Sales',
     category: 'Vendas',
     description: 'Captação, qualificação e conversão de leads em tempo real.',
     icon: <Target className="w-6 h-6" />,
@@ -47,7 +47,7 @@ const PRODUCTS = [
   },
   {
     id: 'ops',
-    name: '<span className="font-lumi">Lumi</span> Ops',
+    name: 'Ops',
     category: 'Backoffice',
     description: 'Gestão Inteligente de Logística, Estoque e Operação de retaguarda.',
     icon: <Settings className="w-6 h-6" />,
@@ -55,7 +55,7 @@ const PRODUCTS = [
   },
   {
     id: 'pulse',
-    name: '<span className="font-lumi">Lumi</span> Pulse',
+    name: 'Pulse',
     category: 'Analytics',
     description: 'Visualização de dados massivos e inteligência preditiva de negócios.',
     icon: <Activity className="w-6 h-6" />,
@@ -63,7 +63,7 @@ const PRODUCTS = [
   },
   {
     id: 'care',
-    name: '<span className="font-lumi">Lumi</span> Care',
+    name: 'Care',
     category: 'Atendimento',
     description: 'Gestão de relacionamento, NPS automatizado e sucesso do cliente.',
     icon: <Heart className="w-6 h-6" />,
@@ -197,10 +197,9 @@ export default function Hub() {
                       <span className="text-[10px] font-black uppercase tracking-widest text-[#611CFC]">
                         {product.category}
                       </span>
-                      <h3 
-                        className="text-2xl font-black text-[#1A1A2E] mt-1 group-hover:text-[#611CFC] transition-colors"
-                        dangerouslySetInnerHTML={{ __html: product.name }}
-                      />
+                      <h3 className="text-2xl font-black text-[#1A1A2E] mt-1 group-hover:text-[#611CFC] transition-colors">
+                        <BrandLumi /> {product.name}
+                      </h3>
                     </div>
 
                     <p className="text-slate-500 text-sm font-bold leading-[1.6] mb-12 flex-grow italic">

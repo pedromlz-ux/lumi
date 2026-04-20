@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import { Check, ArrowRight } from 'lucide-react';
 
+import { BrandLumi } from '@/components/BrandLumi';
+
 interface Tier {
   name: string;
   price: string;
@@ -109,20 +111,22 @@ const PricingCard = ({ tier, index }: { tier: Tier; index: number }) => {
         </div>
 
         {/* Description */}
-        <p 
-          className="text-sm font-bold opacity-70 mb-8 leading-relaxed italic"
-          dangerouslySetInnerHTML={{ __html: `"${tier.description}"` }}
-        />
+        <p className="text-sm font-bold opacity-70 mb-8 leading-relaxed italic">
+          {tier.description.split(/(\bLumi\b)/g).map((part, i) => 
+            part === 'Lumi' ? <BrandLumi key={i} /> : part
+          )}
+        </p>
 
         {/* Features List */}
         <div className="space-y-4 mb-10 flex-grow">
           {tier.features.map((feature, fIdx) => (
             <div key={fIdx} className="flex items-start gap-3">
               <Check className={`w-4 h-4 mt-0.5 shrink-0 ${styles.accent}`} strokeWidth={3} />
-              <span 
-                className="text-[11px] font-black leading-tight uppercase tracking-tight opacity-70"
-                dangerouslySetInnerHTML={{ __html: feature }}
-              />
+              <span className="text-[11px] font-black leading-tight uppercase tracking-tight opacity-70">
+                {feature.split(/(\bLumi\b)/g).map((part, i) => 
+                  part === 'Lumi' ? <BrandLumi key={i} /> : part
+                )}
+              </span>
             </div>
           ))}
         </div>
