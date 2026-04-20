@@ -12,7 +12,24 @@ export default function BlogPostPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [id]);
+    if (post) {
+      document.title = post.metaTitle || `${post.title} | Lumi Blog`;
+      
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', post.metaDescription || post.excerpt);
+      } else {
+        const meta = document.createElement('meta');
+        meta.name = 'description';
+        meta.content = post.metaDescription || post.excerpt;
+        document.head.appendChild(meta);
+      }
+    }
+
+    return () => {
+      document.title = 'Lumi | Ecossistema de Orquestração com IA';
+    };
+  }, [post, id]);
 
   if (!post) {
     return (
@@ -106,14 +123,56 @@ export default function BlogPostPage() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
           className="prose prose-lg lg:prose-xl prose-slate max-w-none 
-            prose-headings:text-[#1A1A2E] prose-headings:font-black prose-headings:tracking-tight
-            prose-p:text-[#6B6B78] prose-p:leading-relaxed prose-p:font-medium
+            prose-headings:text-[#1A1A2E] prose-headings:font-extrabold prose-headings:tracking-tight
+            prose-h2:text-3xl sm:prose-h2:text-4xl prose-h2:mt-16 prose-h2:mb-8
+            prose-h3:text-2xl prose-h3:mt-12 prose-h3:mb-6
+            prose-p:text-[#6B6B78] prose-p:leading-[1.8] prose-p:font-normal prose-p:mb-8
             prose-strong:text-[#1A1A2E] prose-strong:font-bold
             prose-blockquote:border-[#611CFC] prose-blockquote:bg-[#611CFC]/5 prose-blockquote:py-2 prose-blockquote:rounded-r-2xl
-            prose-li:text-[#6B6B78] prose-li:font-medium
-            font-inter"
+            prose-li:text-[#6B6B78] prose-li:font-normal prose-li:mb-4
+            font-inter selection:bg-[#611CFC]/10"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
+
+        {/* Recommended Module Widget */}
+        {post.relatedModuleId && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-16 p-8 rounded-3xl bg-[#4ECDC4] text-[#1A1A2E] relative overflow-hidden group border border-[#4ECDC4]/20 shadow-xl shadow-[#4ECDC4]/20"
+          >
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/20 blur-[100px] pointer-events-none group-hover:bg-white/30 transition-colors duration-500" />
+            
+            <div className="relative z-10">
+              <span className="text-[10px] font-black uppercase tracking-widest text-[#611CFC] mb-2 block">
+                Sugestão Lúmia
+              </span>
+              <h3 className="text-2xl font-black mb-4">
+                Pronto para orquestrar essa solução?
+              </h3>
+              <p className="text-[#1A1A2E]/70 font-medium mb-8 max-w-sm">
+                O módulo <strong>Lumi {post.relatedModuleId.charAt(0).toUpperCase() + post.relatedModuleId.slice(1)}</strong> foi projetado exatamente para resolver os desafios discutidos neste artigo.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  to="/hub"
+                  className="px-8 py-4 bg-[#611CFC] hover:bg-[#5316db] text-white font-black rounded-xl transition-all duration-300 flex items-center justify-center gap-3 group/btn shadow-lg shadow-[#611CFC]/20"
+                >
+                  CONHECER MÓDULO
+                  <ArrowLeft size={18} className="rotate-180 transition-transform group-hover/btn:translate-x-1" />
+                </Link>
+                <button
+                  onClick={() => window.dispatchEvent(new CustomEvent('toggle-lumia-chat'))}
+                  className="px-8 py-4 bg-[#1A1A2E] hover:bg-[#25253d] text-white font-black rounded-xl transition-all duration-300 flex items-center justify-center uppercase text-xs tracking-widest"
+                >
+                  MAPEAR OPERAÇÃO GRATUITAMENTE
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
 
         {/* Footer actions */}
         <motion.div 

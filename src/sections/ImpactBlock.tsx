@@ -1,14 +1,70 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TestimonialsColumn } from '@/components/ui/testimonials-columns-1';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const painPoints = [
-  { before: '\u201CEu passo o dia inteiro respondendo mensagem\u201D', after: '\u2192 n\u00e3o mais' },
-  { before: '\u201CPerco venda porque demoro pra atender\u201D', after: '\u2192 n\u00e3o mais' },
-  { before: '\u201CT\u00e1 tudo bagun\u00e7ado\u201D', after: '\u2192 n\u00e3o mais' },
+const testimonials = [
+  {
+    text: "A Lumi orquestrou toda nossa jornada de vendas. Reduzimos o trabalho braçal e o ROI veio na primeira semana.",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
+    name: "Ricardo Santos",
+    role: "CEO de E-commerce",
+  },
+  {
+    text: "A orquestração invisível é como ter um clone meu 24/7. Finalmente tenho controle total da minha operação.",
+    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=150&h=150&fit=crop",
+    name: "Camila Lima",
+    role: "COO @ TechFlow",
+  },
+  {
+    text: "O suporte flui sem gargalos. Resolvo em minutos o que levava horas. Nossos clientes sentem a diferença.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop",
+    name: "Marcos Vinícius",
+    role: "Head de CX",
+  },
+  {
+    text: "A transição para a Lumi Flow salvou minha equipe do burnout. Automatizamos o ordinário para focar no lucro.",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop",
+    name: "Helena Moreira",
+    role: "Founder de Startup",
+  },
+  {
+    text: "A inteligência preditiva do Lumi Pulse nos salvou de desperdícios massivos. Dados reais, pulso real de negócio.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
+    name: "Felipe Torres",
+    role: "Diretor Logístico",
+  },
+  {
+    text: "Leads qualificados em milissegundos. Meus vendedores agora focam apenas no fechamento, não na triagem.",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop",
+    name: "Juliana Prado",
+    role: "VP de Vendas",
+  },
+  {
+    text: "A Lumi Desk entende nuances que nenhum outro sistema captou. Experiência de marca impecável.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop",
+    name: "André Gomes",
+    role: "Gerente de Suporte",
+  },
+  {
+    text: "Escalamos nossa operação internacional usando Lumi Scale. Uma orquestração verdadeiramente sem fronteiras.",
+    image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=150&h=150&fit=crop",
+    name: "Beatriz Duarte",
+    role: "Regional COO",
+  },
+  {
+    text: "É a paz de espírito que eu precisava. A Lumi cuida do backoffice enquanto eu cuido da visão da empresa.",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop",
+    name: "Thiago Rocha",
+    role: "Founder Serial",
+  },
 ];
+
+const firstColumn = testimonials.slice(0, 3);
+const secondColumn = testimonials.slice(3, 6);
+const thirdColumn = testimonials.slice(6, 9);
 
 export default function ImpactBlock() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -17,23 +73,9 @@ export default function ImpactBlock() {
     const el = sectionRef.current;
     if (!el) return;
 
-    // Title animation
-    gsap.fromTo(el.querySelectorAll('.impact-title'), { opacity: 0, y: 30 }, {
-      opacity: 1, y: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
+    gsap.fromTo(el.querySelectorAll('.impact-title'), { opacity: 0, y: 20 }, {
+      opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out',
       scrollTrigger: { trigger: el, start: 'top 75%' },
-    });
-
-    // Cards slide in from left with stagger
-    const cards = el.querySelectorAll('.impact-card');
-    gsap.fromTo(cards, { opacity: 0, x: -60, scale: 0.95 }, {
-      opacity: 1, x: 0, scale: 1, duration: 0.7, stagger: 0.2, ease: 'power3.out',
-      scrollTrigger: { trigger: el.querySelector('.impact-cards'), start: 'top 80%' },
-    });
-
-    // "Agora flui." fade in
-    gsap.fromTo(el.querySelector('.impact-final'), { opacity: 0, y: 20 }, {
-      opacity: 1, y: 0, duration: 0.8, ease: 'power3.out',
-      scrollTrigger: { trigger: el.querySelector('.impact-final'), start: 'top 90%' },
     });
 
     return () => { ScrollTrigger.getAll().forEach((t) => t.kill()); };
@@ -42,7 +84,7 @@ export default function ImpactBlock() {
   return (
     <section 
       ref={sectionRef} 
-      className="relative w-full py-10 lg:py-14 overflow-hidden bg-[#611CFC]"
+      className="relative w-full py-16 lg:py-24 overflow-hidden bg-[#611CFC]"
       style={{
         backgroundImage: 'url("/magic-bg.png")',
         backgroundSize: 'cover',
@@ -50,59 +92,30 @@ export default function ImpactBlock() {
       }}
     >
       {/* Subtle overlay */}
-      <div className="absolute inset-0 bg-[#611CFC]/40" />
+      <div className="absolute inset-0 bg-[#611CFC]/40 pointer-events-none" />
 
       {/* Floating gradient orbs */}
       <div className="absolute top-[-80px] right-[-80px] w-[300px] h-[300px] rounded-full opacity-20 blur-3xl pointer-events-none animate-blob" style={{ background: 'radial-gradient(circle, #FFFFFF 0%, transparent 70%)' }} />
       <div className="absolute bottom-[-100px] left-[-60px] w-[250px] h-[250px] rounded-full opacity-15 blur-3xl pointer-events-none animate-blob" style={{ background: 'radial-gradient(circle, #4ECDC4 0%, transparent 70%)', animationDelay: '-5s' }} />
 
-      <div className="relative z-10 mx-auto max-w-3xl px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <span className="impact-title inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[1.5px] mb-4 px-3 py-1.5 rounded-full" style={{ color: '#FFFFFF', backgroundColor: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(255, 255, 255, 0.2)' }}>
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="text-center mb-16 lg:mb-20">
+          <span className="impact-title inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[1.5px] mb-6 px-4 py-2 rounded-full" style={{ color: '#FFFFFF', backgroundColor: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(255, 255, 255, 0.2)' }}>
             <span className="w-1.5 h-1.5 rounded-full bg-[#4ECDC4] animate-scale-pulse" />
-            O que muda
+            O que dizem sobre nós
           </span>
-          <h2 className="impact-title text-2xl sm:text-3xl lg:text-[36px] font-extrabold leading-[1.12] tracking-tight" style={{ color: '#FFFFFF' }}>
-            &Eacute; a sensa&ccedil;&atilde;o de<br className="hidden sm:block" />{' '}
-            <span className="text-white">
-              &ldquo;por que eu n&atilde;o fiz isso&nbsp;antes?&rdquo;
-            </span>
+          <h2 className="impact-title text-3xl sm:text-4xl lg:text-[54px] font-extrabold leading-[1.05] tracking-tight" style={{ color: '#FFFFFF' }}>
+            A liberdade de ver seu neg&oacute;cio operando em <br className="hidden sm:block" />
+            <span className="text-[#4ECDC4]">harmonia absoluta.</span>
           </h2>
         </div>
 
-        <div className="impact-cards space-y-4">
-          {painPoints.map((p, i) => (
-            <div
-              key={i}
-              className="impact-card group relative flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 p-5 rounded-xl transition-all duration-500 hover:scale-[1.01] cursor-default overflow-hidden"
-              style={{
-                backgroundColor: 'rgba(255,255,255,0.08)',
-                border: '1px solid rgba(255,255,255,0.15)',
-              }}
-            >
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{ background: 'linear-gradient(90deg, rgba(255,255,255,0.1) 0%, transparent 60%)' }}
-              />
-
-              <p className="relative text-sm sm:text-base font-medium flex-1 text-white/70">
-                {p.before}
-              </p>
-
-              <div className="relative hidden sm:flex items-center gap-3">
-                <span className="text-xl transition-transform duration-300 group-hover:translate-x-1 opacity-30 text-white">&rarr;</span>
-              </div>
-
-              <p className="relative text-base font-bold whitespace-nowrap transition-all duration-300 group-hover:scale-105" style={{ color: '#FFFFFF' }}>
-                {p.after}
-              </p>
-            </div>
-          ))}
+        {/* Testimonials Hub */}
+        <div className="flex justify-center gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)] max-h-[550px] overflow-hidden">
+          <TestimonialsColumn testimonials={firstColumn} duration={25} />
+          <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={35} />
+          <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={30} />
         </div>
-
-        <p className="impact-final text-center mt-10 text-xl font-bold" style={{ color: '#FFFFFF' }}>
-          Agora flui.
-        </p>
       </div>
     </section>
   );

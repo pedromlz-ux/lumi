@@ -8,7 +8,7 @@ export default function Hero() {
   const h1Ref = useRef<HTMLHeadingElement>(null);
   const p1Ref = useRef<HTMLParagraphElement>(null);
   const p2Ref = useRef<HTMLParagraphElement>(null);
-  const ctaRef = useRef<HTMLAnchorElement>(null);
+  const ctaRef = useRef<HTMLButtonElement>(null);
   const imgRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -74,9 +74,9 @@ export default function Hero() {
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
           
-          {/* Mascot Column (Left on Desktop) */}
-          <div ref={imgRef} className="w-full lg:w-1/2 flex justify-center lg:justify-end order-2 lg:order-1">
-            <div className="relative animate-float-slow max-w-[450px] lg:max-w-[550px]">
+          {/* Column 1: Mascot (Left on Desktop, Below Title on Mobile logic) */}
+          <div ref={imgRef} className="order-2 lg:order-1 w-full lg:w-1/2 flex justify-center lg:justify-start">
+            <div className="relative animate-float-slow w-full max-w-[320px] sm:max-w-[450px] lg:max-w-[550px]">
               <img
                 src="/lumi-dando-oi.png"
                 alt="Lumia dando oi"
@@ -85,9 +85,9 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Content Column (Right on Desktop) */}
-          <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left order-1 lg:order-2">
-            {/* Headline */}
+          {/* Column 2: Content (Right on Desktop) */}
+          <div className="order-1 lg:order-2 w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
+            {/* Headline First - As seen in the image */}
             <h1
               ref={h1Ref}
               className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight sm:tracking-[-2px] mb-6 font-inter"
@@ -96,7 +96,7 @@ export default function Hero() {
               Seu <span className="text-[#611CFC]">Hub</span> de Sistemas de IA
             </h1>
 
-            {/* Introduction */}
+            {/* Introduction greeting below title */}
             <h2
               ref={tagRef}
               className="text-lg sm:text-xl font-bold text-slate-800 leading-tight mb-8 font-inter opacity-90"
@@ -105,7 +105,7 @@ export default function Hero() {
             </h2>
 
             {/* Bullet Points */}
-            <div ref={p1Ref} className="flex flex-col gap-6 mb-10">
+            <div ref={p1Ref} className="flex flex-col gap-6 mb-10 text-left w-full">
               {[
                 { title: 'Auxílio gratuito 24h.', desc: 'Estou disponível direto no site, a qualquer momento, para te guiar.' },
                 { title: 'Dúvidas e consultas.', desc: 'Respondo perguntas e direciono os melhores sistemas para a sua necessidade.' },
@@ -116,21 +116,21 @@ export default function Hero() {
                     <span className="text-[#4ECDC4] font-black text-sm">✓</span>
                   </div>
                   <div className="flex flex-col">
-                    <h3 className="text-lg font-bold text-[#1A1A2E] leading-tight">{item.title}</h3>
-                    <p className="text-slate-500 text-sm font-medium">{item.desc}</p>
+                    <h3 className="text-base sm:text-lg font-bold text-[#1A1A2E] leading-tight">{item.title}</h3>
+                    <p className="text-slate-500 text-xs sm:text-sm font-medium">{item.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* CTA */}
-            <a
+            <button
               ref={ctaRef}
-              href="/contact"
-              className="group relative inline-flex items-center gap-3 px-10 py-5 bg-[#611CFC] hover:bg-[#5316db] text-white rounded-full font-black text-lg tracking-tight transition-all duration-300 shadow-[0_20px_50px_-20px_rgba(97,28,252,0.5)] hover:shadow-[0_20px_50px_-10px_rgba(97,28,252,0.6)] hover:-translate-y-1"
+              onClick={() => window.dispatchEvent(new CustomEvent('toggle-lumia-chat'))}
+              className="w-full sm:w-auto group relative inline-flex justify-center items-center gap-3 px-10 py-5 bg-[#611CFC] hover:bg-[#5316db] text-white rounded-full font-black text-lg tracking-tight transition-all duration-300 shadow-[0_20px_50px_-20px_rgba(97,28,252,0.5)] hover:shadow-[0_20px_50px_-10px_rgba(97,28,252,0.6)] hover:-translate-y-1"
             >
               Mapear operação gratuitamente
-            </a>
+            </button>
           </div>
 
         </div>

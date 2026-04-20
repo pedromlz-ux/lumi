@@ -2,11 +2,14 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router';
 import {
   Menu,
+  Home,
+  Layout,
+  BookOpen,
+  Mail,
 } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
-  SheetHeader,
   SheetTrigger,
 } from "../components/ui/sheet";
 
@@ -21,9 +24,9 @@ function Logo() {
   return (
     <Link to="/" className="group h-full flex items-center">
       <img
-        src="/Logo-New.svg"
+        src="/Logo-Navbar.svg"
         alt="LUMI"
-        className="h-[62px] md:h-[84px] w-auto transition-transform duration-300 group-hover:scale-105"
+        className="h-[30px] md:h-[42px] w-auto transition-transform duration-300 group-hover:scale-105"
       />
     </Link>
   );
@@ -54,28 +57,48 @@ export default function Navbar() {
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <button
-                  className="p-2 rounded-md transition-colors text-[#1A1A2E] hover:bg-[#611CFC]/5"
+                  className="p-2 rounded-xl transition-all text-[#1A1A2E] bg-slate-100/50 hover:bg-[#611CFC]/5"
                 >
                   <Menu size={24} />
                 </button>
               </SheetTrigger>
-              <SheetContent side="left" className="bg-white border-slate-200">
-                <SheetHeader className="mb-8 border-b pb-4">
-                  <div className="h-8 flex items-center">
+              <SheetContent side="left" className="p-0 bg-white border-r-slate-100 w-[300px]">
+                <div className="flex flex-col h-full">
+                  <div className="p-8 border-b border-slate-50">
                     <Logo />
+                    <p className="mt-4 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Navegação</p>
                   </div>
-                </SheetHeader>
-                <div className="mt-8 flex flex-col gap-1">
-                  {NAV_ITEMS.map((item) => (
+
+                  <div className="flex-1 px-4 py-8">
+                    <div className="flex flex-col gap-2">
+                       {NAV_ITEMS.map((item) => (
+                        <Link
+                          key={item.id}
+                          to={item.link}
+                          onClick={() => setIsOpen(false)}
+                          className="flex items-center gap-4 px-4 py-4 rounded-2xl hover:bg-slate-50 transition-all group"
+                        >
+                          <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-white group-hover:shadow-sm transition-all text-slate-400 group-hover:text-[#611CFC]">
+                             {item.label === 'Home' && <Home size={20} />}
+                             {item.label === 'Lumi Hub' && <Layout size={20} />}
+                             {item.label === 'Blog' && <BookOpen size={20} />}
+                             {item.label === 'Contato' && <Mail size={20} />}
+                          </div>
+                          <span className="text-lg font-bold text-slate-700 group-hover:text-[#1A1A2E]">{item.label}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="p-8 border-t border-slate-50">
                     <Link
-                      key={item.id}
-                      to={item.link}
+                      to="/ativar"
                       onClick={() => setIsOpen(false)}
-                      className="flex items-center w-full py-4 px-4 text-base font-bold text-[#1A1A2E] hover:bg-slate-50 transition-colors uppercase tracking-widest border-l-2 border-transparent hover:border-[#611CFC]"
+                      className="flex items-center justify-center w-full py-4 rounded-2xl bg-[#611CFC] text-white font-black text-sm uppercase tracking-widest shadow-xl shadow-[#611CFC]/20 mb-6"
                     >
-                      {item.label}
+                      ATIVAR AGORA
                     </Link>
-                  ))}
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>
@@ -98,10 +121,10 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
-        <div className="flex flex-1 justify-end items-center">
+        <div className={`flex flex-1 justify-end items-center transition-opacity duration-300 ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
           <Link
             to="/ativar"
-            className="relative text-[10px] md:text-xs font-black px-5 md:px-7 py-2.5 md:py-3 rounded-full transition-all duration-300 hover:scale-105 hover:brightness-110 shrink-0 ml-2 md:ml-6 shadow-[0_4px_14px_0_rgba(97,28,252,0.3)]"
+            className="relative text-[9px] md:text-xs font-black px-4 md:px-7 py-2.5 md:py-3 rounded-full transition-all duration-300 hover:scale-105 hover:brightness-110 shrink-0 ml-2 md:ml-6 shadow-[0_4px_14px_0_rgba(97,28,252,0.3)]"
             style={{
               backgroundColor: '#611CFC',
               color: '#FFFFFF',

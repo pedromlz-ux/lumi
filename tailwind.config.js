@@ -48,6 +48,20 @@ module.exports = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Integrated new colors
+        'background-alt': "var(--background)",
+        'foreground-alt': "var(--foreground)",
+        'primary-alt': "var(--text-primary)",
+        'secondary-alt': "var(--text-secondary)",
+        'base-100': "var(--base-100)",
+        'base-200': "var(--base-200)",
+        'base-300': "var(--base-300)",
+        'base-content': "var(--base-content)",
+        'neutral': {
+          DEFAULT: "var(--neutral-color)",
+          content: "var(--neutral-content)",
+        },
+        'highlight': "var(--highlight-color)",
       },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",
@@ -83,6 +97,41 @@ module.exports = {
         "scale-pulse": {
           "0%, 100%": { transform: "translate(-50%, -50%) scale(1)", opacity: "0.05" },
           "50%": { transform: "translate(-50%, -50%) scale(1.1)", opacity: "0.1" },
+        },
+        // Integrated new keyframes
+        simpleFadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        pulseBar: {
+          '0%, 100%': { 
+            height: '24px',
+            opacity: '0.6'
+          },
+          '50%': { 
+            height: '12px',
+            opacity: '0.2'
+          }
+        },
+        pulseBarShort: {
+          '0%, 100%': { 
+            height: '16px',
+            opacity: '0.6'
+          },
+          '50%': { 
+            height: '8px',
+            opacity: '0.2'
+          }
+        },
+        glow: {
+          '0%, 100%': { 
+            opacity: '0.5',
+            transform: 'scale(1)'
+          },
+          '50%': { 
+            opacity: '0.8',
+            transform: 'scale(1.1)'
+          }
         }
       },
       animation: {
@@ -93,9 +142,18 @@ module.exports = {
         "float-delayed": "float 10s ease-in-out infinite 2s",
         "pulse-slow": "pulse-slow 4s ease-in-out infinite",
         "scale-pulse": "scale-pulse 4s ease-in-out infinite",
+        // Integrated new animations
+        'fade-in': 'simpleFadeIn 0.3s ease-out forwards',
+        'pulse-bar': 'pulseBar 1.5s ease-in-out infinite',
+        'pulse-bar-delay': 'pulseBarShort 1.5s ease-in-out 0.2s infinite',
+        'pulse-bar-delay2': 'pulseBar 1.5s ease-in-out 0.4s infinite',
+        'glow': 'glow 2s ease-in-out infinite',
       },
       fontFamily: {
         handwritten: ["Caveat", "cursive"],
+        sans: ['var(--font-noto)'],
+        signika: ['var(--font-signika)'],
+        'dm-sans': ['var(--font-dm-sans)'],
       },
     },
   },
