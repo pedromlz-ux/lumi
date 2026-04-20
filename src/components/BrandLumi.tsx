@@ -18,6 +18,7 @@ export function BrandLumi({
   const baseStyles = {
     color: '#611CFC',
     fontFamily: "'Pacifico', cursive",
+    fontWeight: 'bold',
   };
 
   const heroStyles = useHeroStyles ? {

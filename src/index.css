@@ -201,6 +201,14 @@
   background-clip: text;
 }
 
+/* Brand Typography */
+.font-lumi {
+  font-family: 'Pacifico', cursive;
+  font-weight: bold;
+  color: #611CFC;
+  display: inline-block;
+}
+
 /* Shimmer border effect */
 .shimmer-border {
   position: relative;
