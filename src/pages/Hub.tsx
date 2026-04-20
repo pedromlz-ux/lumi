@@ -82,7 +82,7 @@ export default function Hub() {
   return (
     <div className="min-h-screen font-inter relative">
       {/* Header & Filters Section (White) */}
-      <section className="pt-12 pb-3 bg-white border-b border-slate-100 relative z-20 overflow-hidden">
+      <section className="pt-40 pb-3 bg-white border-b border-slate-100 relative z-20 overflow-hidden">
         {/* Decorative background element for the "hole" */}
         <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50/50 -skew-x-12 translate-x-20 pointer-events-none -z-10" />
         
@@ -93,11 +93,11 @@ export default function Hub() {
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-12 h-1 bg-[#611CFC]" />
                 <span className="text-xs font-black uppercase tracking-[0.2em] text-[#611CFC]">
-                  Ecossistema Lumi
+                  Ecossistema <span className="font-lumi">Lumi</span>
                 </span>
               </div>
               <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-[#1A1A2E] mb-3">
-                LUMI <span className="text-[#4ECDC4]">HUB</span>
+                <span className="font-lumi">Lumi</span> <span className="text-[#4ECDC4]">Hub</span>
               </h1>
               <p className="text-lg text-slate-500 font-bold leading-relaxed">
                 Selecione o módulo ideal para a sua operação. Todos os sistemas integrados nativamente 
