@@ -45,7 +45,7 @@ export const TapedFooter = () => {
             <div className='flex flex-col gap-6'>
               <h4 className='uppercase font-black text-[10px] tracking-[0.2em] text-slate-400'>Ecossistema</h4>
               <div className="flex flex-col gap-3 text-sm items-start">
-                <Link className='text-[#1A1A2E] hover:text-[#611CFC] font-bold transition-colors' to="/hub"><span className="font-lumi">lumi</span> Hub</Link>
+                <Link className='text-[#1A1A2E] hover:text-[#611CFC] font-bold transition-colors' to="/hub"><span className="font-lumi">Lumi</span> Hub</Link>
                 <Link className='text-[#1A1A2E] hover:text-[#611CFC] font-bold transition-colors' to="/blog">Blog & Conteúdo</Link>
                 <Link className='text-[#1A1A2E] hover:text-[#611CFC] font-bold transition-colors' to="/contato">Mapeamento Gratuito</Link>
                 <Link className='pointer-events-none text-slate-300 font-bold flex items-center gap-2' to="/">
@@ -83,9 +83,9 @@ export const TapedFooter = () => {
 
       {/* Bottom Bar */}
       <div className="mt-8 px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] sm:text-xs font-bold text-slate-400">
-        <p>© {currentYear} <span className="font-lumi">lumi</span>. Todos os direitos reservados.</p>
+        <p>© {currentYear} <span className="font-lumi">Lumi</span>. Todos os direitos reservados.</p>
         <div className="flex items-center gap-6">
-          <span className="opacity-50">Desenvolvido com Orquestração <span className="font-lumi text-[10px]">lumi</span></span>
+          <span className="opacity-50">Desenvolvido com Orquestração <span className="font-lumi text-[10px]">Lumi</span></span>
           <div className="w-1.5 h-1.5 rounded-full bg-[#4ECDC4] animate-pulse" />
         </div>
       </div>

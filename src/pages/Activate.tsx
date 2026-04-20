@@ -9,7 +9,7 @@ const TIERS = [
     price: '147',
     description: 'Para quem quer começar com precisão cirúrgica.',
     features: [
-      '1 Sistema <span className="font-lumi">lumi</span> a escolha',
+      '1 Sistema <span className="font-lumi">Lumi</span> a escolha',
       'Suporte via ticket',
       'Integrações via Webhook',
       'Até 5.000 ações/mês'
@@ -23,7 +23,7 @@ const TIERS = [
     price: '297',
     description: 'Até 3 sistemas integrados para escalar seu negócio.',
     features: [
-      'Escolha 3 Sistemas <span className="font-lumi">lumi</span>',
+      'Escolha 3 Sistemas <span className="font-lumi">Lumi</span>',
       'Suporte prioritário',
       'Time de implementação',
       'Até 25.000 ações/mês',
@@ -36,9 +36,9 @@ const TIERS = [
   {
     name: 'Bundle Pro',
     price: '497',
-    description: 'A força total da <span className="font-lumi">lumi</span> em até 5 sistemas unificados.',
+    description: 'A força total da <span className="font-lumi">Lumi</span> em até 5 sistemas unificados.',
     features: [
-      'Escolha 5 Sistemas <span className="font-lumi">lumi</span>',
+      'Escolha 5 Sistemas <span className="font-lumi">Lumi</span>',
       'Consultoria estratégica mensal',
       'API Access ilimitado',
       'Até 100.000 ações/mês',
@@ -53,7 +53,7 @@ const TIERS = [
     price: 'Sob Consulta',
     description: 'Estratégia massiva para grandes operações.',
     features: [
-      'Todos os Sistemas <span className="font-lumi">lumi</span>',
+      'Todos os Sistemas <span className="font-lumi">Lumi</span>',
       'Dedicated Success Manager',
       'SLA de 99.9% em contrato',
       'Ações ilimitadas',

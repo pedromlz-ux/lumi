@@ -31,10 +31,12 @@ export function BrandLumi({
 
   const combinedStyles = { ...baseStyles, ...heroStyles };
 
+  const displayText = text.toLowerCase() === 'lumi' ? 'Lumi' : text;
+
   if (sparkles) {
     return (
       <SparklesText 
-        text={text.toLowerCase()} 
+        text={displayText} 
         sparklesCount={4}
         colors={{ first: "#611CFC", second: "#4ECDC4" }}
         className={cn("inline-block text-inherit", className)}
@@ -48,7 +50,7 @@ export function BrandLumi({
       className={cn("inline-block", className)}
       style={combinedStyles}
     >
-      {text.toLowerCase()}
+      {displayText}
     </span>
   );
 }

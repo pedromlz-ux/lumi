@@ -61,7 +61,7 @@ export default function Contact() {
               Vamos transformar seu <span className="text-gradient">negócio</span> hoje?
             </h1>
             <p className="text-lg text-[#6B6B78] mb-12 max-w-lg">
-              Tem uma dúvida técnica ou quer saber como a <span className="font-lumi text-[0.85em]">lumi</span> pode escalar sua empresa? Nossa equipe está pronta para conversar.
+              Tem uma dúvida técnica ou quer saber como a <span className="font-lumi text-[0.85em]">Lumi</span> pode escalar sua empresa? Nossa equipe está pronta para conversar.
             </p>
 
             <div className="space-y-8">
