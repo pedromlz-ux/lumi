@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Sparkles, MessageCircle } from 'lucide-react';
 import { PromptInputBox } from '@/components/ui/ai-prompt-box';
+import { Button } from '@/components/ui/button';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 interface Message {
