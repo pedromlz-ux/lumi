@@ -12,7 +12,7 @@ export const TapedFooter = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="my-12 px-4 max-w-7xl mx-auto font-inter">
+    <footer className="mt-4 mb-12 px-4 max-w-7xl mx-auto font-inter">
       <div className="relative bg-white rounded-[32px] mx-auto px-6 md:px-12 py-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-10 border border-slate-100 shadow-[20px_20px_60px_-15px_rgba(0,0,0,0.05)]">
         
         {/* Tapes */}
@@ -47,7 +47,12 @@ export const TapedFooter = () => {
               <div className="flex flex-col gap-3 text-sm items-start">
                 <Link className='text-[#1A1A2E] hover:text-[#611CFC] font-bold transition-colors' to="/hub"><span className="font-lumi">Lumi</span> Hub</Link>
                 <Link className='text-[#1A1A2E] hover:text-[#611CFC] font-bold transition-colors' to="/blog">Blog & Conteúdo</Link>
-                <Link className='text-[#1A1A2E] hover:text-[#611CFC] font-bold transition-colors' to="/contato">Mapeamento Gratuito</Link>
+                <button 
+                  onClick={() => window.dispatchEvent(new CustomEvent('toggle-lumia-chat'))}
+                  className='text-[#1A1A2E] hover:text-[#611CFC] font-bold transition-colors'
+                >
+                  Mapeamento Gratuito
+                </button>
                 <Link className='pointer-events-none text-slate-300 font-bold flex items-center gap-2' to="/">
                   API Docs <span className='inline-flex py-0.5 px-2 bg-slate-100 text-[9px] rounded-full uppercase tracking-tighter'>Soon</span>
                 </Link>
@@ -60,7 +65,7 @@ export const TapedFooter = () => {
               <div className="flex flex-col gap-3 text-sm items-start">
                 <Link className='text-[#1A1A2E] hover:text-[#611CFC] font-bold transition-colors' to="/terms">Termos de Uso</Link>
                 <Link className='text-[#1A1A2E] hover:text-[#611CFC] font-bold transition-colors' to="/privacy">Privacidade</Link>
-                <Link className='text-[#1A1A2E] hover:text-[#611CFC] font-bold transition-colors' to="/privacy#cookies">Cookies</Link>
+                <Link className='text-[#1A1A2E] hover:text-[#611CFC] font-bold transition-colors' to="/cookies">Cookies</Link>
               </div>
             </div>
 

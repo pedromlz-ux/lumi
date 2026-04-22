@@ -83,8 +83,8 @@ export default function BlogPostPage() {
 
           <div className="flex flex-wrap items-center gap-6 text-sm font-bold text-[#6B6B78]">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#611CFC] to-[#A78BFA] flex items-center justify-center text-white text-xs">
-                <User size={14} />
+              <div className="w-8 h-8 rounded-full bg-[#611CFC] flex items-center justify-center overflow-hidden border border-[#611CFC]/20">
+                <img src={post.authorImage} alt={post.author} className="w-full h-full object-cover" />
               </div>
               <span>{post.author}</span>
             </div>

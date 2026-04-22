@@ -94,7 +94,13 @@ export const BlogListing = ({
                     {post.excerpt}
                   </p>
                 </CardContent>
-                <CardFooter className="px-8 pb-8 pt-0">
+                <CardFooter className="px-8 pb-8 pt-0 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="w-6 h-6 rounded-full bg-[#611CFC] flex items-center justify-center overflow-hidden border border-[#611CFC]/10">
+                      <img src={post.authorImage} alt={post.author} className="w-full h-full object-cover" />
+                    </div>
+                    <span className="text-[10px] font-bold text-[#6B6B78] uppercase tracking-wider">{post.author}</span>
+                  </div>
                   <Link
                     to={`/blog/${post.id}`}
                     className="flex items-center text-sm font-black text-[#611CFC] uppercase tracking-widest group/link"

@@ -19,7 +19,7 @@ export default function Privacy() {
           <section className="mb-8 p-8 rounded-3xl bg-white/40 backdrop-blur-md border border-white/60">
             <h2 className="text-2xl font-bold text-[#1A1A2E] mb-4">Privacidade Primeiro.</h2>
             <p className="mb-4">
-              Na LUMI, sua privacidade não é apenas um termo legal; é o pilar de nossa tecnologia. 
+              Na <span className="text-[#611CFC]">Lumi</span>, sua privacidade não é apenas um termo legal; é o pilar de nossa tecnologia. 
               Garantimos total transparência sobre como seus dados alimentam nossas automações.
             </p>
           </section>

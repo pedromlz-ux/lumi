@@ -11,6 +11,7 @@ import Blog from '@/pages/Blog';
 import BlogPostPage from '@/pages/BlogPostPage';
 import Activate from '@/pages/Activate';
 import Hub from '@/pages/Hub';
+import Cookies from '@/pages/Cookies';
 import ScrollToTop from '@/components/ScrollToTop';
 import LumiaChatbot from '@/components/LumiaChatbot';
 import { Toaster } from 'sonner';
@@ -50,6 +51,7 @@ export default function App() {
           <Route path="/blog/:id" element={<BlogPostPage />} />
           <Route path="/ativar" element={<Activate />} />
           <Route path="/hub" element={<Hub />} />
+          <Route path="/cookies" element={<Cookies />} />
           <Route path="/demo-404" element={<NotFoundDemo />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

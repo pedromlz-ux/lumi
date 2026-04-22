@@ -104,14 +104,14 @@ export default function ImpactBlock() {
             <span className="w-1.5 h-1.5 rounded-full bg-[#4ECDC4] animate-scale-pulse" />
             O que dizem sobre nós
           </span>
-          <h2 className="impact-title text-3xl sm:text-4xl lg:text-[54px] font-extrabold leading-[1.05] tracking-tight" style={{ color: '#FFFFFF' }}>
+          <h2 className="impact-title text-3xl sm:text-4xl lg:text-[54px] font-extrabold leading-[1.3] tracking-tight" style={{ color: '#FFFFFF' }}>
             A liberdade de ver seu neg&oacute;cio operando em <br className="hidden sm:block" />
             <span className="text-[#4ECDC4]">harmonia absoluta.</span>
           </h2>
         </div>
 
         {/* Testimonials Hub */}
-        <div className="flex justify-center gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)] max-h-[550px] overflow-hidden">
+        <div className="flex justify-center gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] h-[400px] sm:h-[550px] overflow-hidden">
           <TestimonialsColumn testimonials={firstColumn} duration={25} />
           <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={35} />
           <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={30} />

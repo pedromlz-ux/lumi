@@ -19,7 +19,7 @@ export default function Terms() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-[#1A1A2E] mb-4">1. Aceitação dos Termos</h2>
             <p className="mb-4">
-              Ao acessar e usar a LUMI, você concorda em cumprir e estar vinculado a estes Termos de Uso. 
+              Ao acessar e usar a <span className="text-[#611CFC]">Lumi</span>, você concorda em cumprir e estar vinculado a estes Termos de Uso. 
               Nossas soluções de automação são projetadas para otimizar seus processos de negócio com ética e eficiência.
             </p>
           </section>
@@ -27,7 +27,7 @@ export default function Terms() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-[#1A1A2E] mb-4">2. Uso do Serviço</h2>
             <p className="mb-4">
-              Você concorda em usar nossas ferramentas apenas para fins lícitos. A LUMI reserva-se o direito de 
+              Você concorda em usar nossas ferramentas apenas para fins lícitos. A <span className="text-[#611CFC]">Lumi</span> reserva-se o direito de 
               suspender o acesso em caso de uso indevido que comprometa a integridade de nossa infraestrutura de IA.
             </p>
           </section>
@@ -35,8 +35,8 @@ export default function Terms() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-[#1A1A2E] mb-4">3. Propriedade Intelectual</h2>
             <p className="mb-4">
-              Todo o conteúdo, algoritmos e design do site são de propriedade exclusiva da LUMI. 
-              A marca <span className="text-[#611CFC] font-bold italic" style={{ fontFamily: "'Pacifico', cursive" }}>lumi</span> é protegida por direitos autorais.
+              Todo o conteúdo, algoritmos e design do site são de propriedade exclusiva da <span className="text-[#611CFC]">Lumi</span>. 
+              A marca é protegida por direitos autorais.
             </p>
           </section>
 

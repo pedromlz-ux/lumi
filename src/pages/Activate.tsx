@@ -67,7 +67,7 @@ const TIERS = [
 
 export default function Activate() {
   return (
-    <div className="min-h-screen pt-32 pb-24 tech-grid font-inter relative overflow-hidden" style={{ backgroundColor: '#FFFFFF' }}>
+    <div className="min-h-screen pt-32 pb-10 tech-grid font-inter relative overflow-hidden" style={{ backgroundColor: '#FFFFFF' }}>
       <OrganicGraphics className="opacity-20 fixed -top-40 -left-60 scale-150 -rotate-12 pointer-events-none" />
       <OrganicGraphics className="opacity-10 fixed top-1/2 -right-40 scale-125 rotate-45 pointer-events-none" />
       
@@ -90,7 +90,7 @@ export default function Activate() {
         <SquishyPricing tiers={TIERS} />
 
         {/* Bottom Note */}
-        <div className="mt-8 text-center">
+        <div className="mt-4 text-center">
           <p className="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] opacity-60">
             Todos os preços em Reais (BRL). Cobrança mensal. Cancelamento a qualquer momento.
           </p>

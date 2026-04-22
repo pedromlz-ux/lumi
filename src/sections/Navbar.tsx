@@ -124,7 +124,7 @@ export default function Navbar() {
         <div className={`flex flex-1 justify-end items-center transition-opacity duration-300 ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
           <Link
             to="/ativar"
-            className="relative text-[9px] md:text-xs font-black px-4 md:px-7 py-2.5 md:py-3 rounded-full transition-all duration-300 hover:scale-105 hover:brightness-110 shrink-0 ml-2 md:ml-6 shadow-[0_4px_14px_0_rgba(97,28,252,0.3)]"
+            className="relative text-[10px] md:text-xs font-black px-4 md:px-7 py-2.5 md:py-3 rounded-full transition-all duration-300 hover:scale-105 hover:brightness-110 shrink-0 ml-2 md:ml-6 shadow-[0_4px_14px_0_rgba(97,28,252,0.3)]"
             style={{
               backgroundColor: '#611CFC',
               color: '#FFFFFF',
