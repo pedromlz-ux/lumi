@@ -9,24 +9,24 @@ import FloatingParticles from '../components/FloatingParticles';
 gsap.registerPlugin(ScrollTrigger);
 
 const integrations = [
-  "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
-  "https://cdn-icons-png.flaticon.com/512/174/174857.png", // LinkedIn
-  "https://cdn-icons-png.flaticon.com/512/2111/2111615.png", // Slack
-  "https://cdn-icons-png.flaticon.com/512/174/174872.png", // Spotify
-  "https://cdn-icons-png.flaticon.com/512/733/733547.png", // Facebook
-  "https://cdn-icons-png.flaticon.com/512/5968/5968381.png", // Stripe
-  "https://cdn-icons-png.flaticon.com/512/174/174855.png", // Instagram
-  "https://cdn-icons-png.flaticon.com/512/888/888853.png", // Dropbox
-  "https://cdn-icons-png.flaticon.com/512/906/906324.png", // Jira
-  "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
-  "https://cdn-icons-png.flaticon.com/512/5968/5968705.png", // Square
-  "https://cdn-icons-png.flaticon.com/512/732/732218.png", // Shopify
-  "https://cdn-icons-png.flaticon.com/512/5968/5968755.png", // Zapier
-  "https://cdn-icons-png.flaticon.com/512/5968/5968520.png", // Google Drive
-  "https://cdn-icons-png.flaticon.com/512/1384/1384060.png", // YouTube
-  "https://cdn-icons-png.flaticon.com/512/5968/5968885.png", // Airtable
-  "https://cdn-icons-png.flaticon.com/512/2111/2111370.png", // Discord
-  "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+  "/integrations/google.svg",
+  "/integrations/linkedin.png",
+  "/integrations/slack.png",
+  "/integrations/spotify.png",
+  "/integrations/facebook.png",
+  "/integrations/stripe.png",
+  "/integrations/instagram.png",
+  "/integrations/dropbox.png",
+  "/integrations/jira.png",
+  "/integrations/netflix.svg",
+  "/integrations/square.png",
+  "/integrations/shopify.png",
+  "/integrations/zapier.png",
+  "/integrations/drive.png",
+  "/integrations/youtube.png",
+  "/integrations/airtable.png",
+  "/integrations/discord.png",
+  "/integrations/instagram.png" // reused since it was there twice
 ];
 
 export default function Integrations() {
